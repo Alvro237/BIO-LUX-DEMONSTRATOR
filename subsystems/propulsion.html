@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="prop.meta_title" data-meta-desc-key="prop.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="prop.meta_title">Propulsion // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Mission Analysis & Propulsion subsystem: High-efficiency FEEP electric propulsion." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current" data-i18n="nav.propulsion">Propulsion</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="prop.code">02 / MA &amp; PROP</p>
+            <h1 class="sub-hero__h1" data-i18n="prop.title">Mission Analysis &amp; Propulsion</h1>
+            <p class="sub-hero__lede" data-i18n="prop.lede">Electric propulsion to bridge the gap from rideshare drop-off to operational orbit, and safely deorbit within ESA Zero Debris guidelines.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/alejandro-espinosa.png" alt="Alejandro Espinosa" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="prop.owner_role">MA &amp; Propulsion Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="prop.owner_name">Alejandro Espinosa</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="telemetry" aria-hidden="true">
+      <div class="telemetry__track">
+        <span class="telemetry__item accent">PROP // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">ENGINE · ENPULSION NANO R3</span>
+        <span class="telemetry__item">TYPE · FEEP ELECTRIC</span>
+        <span class="telemetry__item">NOMINAL THRUST · 350 µN</span>
+        <span class="telemetry__item">ISP · 2500 SEC</span>
+        <span class="telemetry__item">PROPELLANT · SOLID INDIUM</span>
+        <span class="telemetry__item">PROP MASS · 215 G</span>
+        <span class="telemetry__item">TOTAL ΔV · 441 M/S</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+        
+        <span class="telemetry__item accent">PROP // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">ENGINE · ENPULSION NANO R3</span>
+        <span class="telemetry__item">TYPE · FEEP ELECTRIC</span>
+        <span class="telemetry__item">NOMINAL THRUST · 350 µN</span>
+        <span class="telemetry__item">ISP · 2500 SEC</span>
+        <span class="telemetry__item">PROPELLANT · SOLID INDIUM</span>
+        <span class="telemetry__item">PROP MASS · 215 G</span>
+        <span class="telemetry__item">TOTAL ΔV · 441 M/S</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+      </div>
+    </div>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="prop.overview_lede">High delta-V capability in a 1U envelope.</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="prop.overview_p1">To exploit affordable commercial rideshare launches, BIO-LUX must act as its own space tug.</p>
+            <p data-i18n="prop.overview_p2">Assuming an injection altitude of 575 km, the platform requires substantial $\Delta V$ to perform orbit acquisition up to the 674 km target, conduct station keeping to maintain the 3-day repeating ground track, and subsequently spiral down to a 360 km disposal altitude to guarantee reentry within 5 years.</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="prop.fact_dv_label">Required ΔV (Worst Case)</span>
+              <strong data-i18n="prop.fact_dv_value">271.1 m/s</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="prop.fact_vol_label">Engine Volume</span>
+              <strong data-i18n="prop.fact_vol_value">~0.8U</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="prop.fact_power_label">Nominal Firing Power</span>
+              <strong data-i18n="prop.fact_power_value">45 W</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="prop.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="prop.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Propulsion Model</span>
+            <span class="sub-specs__value">Enpulsion Nano R3</span>
+            <span class="sub-specs__unit">FEEP</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Propellant</span>
+            <span class="sub-specs__value">Indium</span>
+            <span class="sub-specs__unit">Solid, Unpressurized</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Propellant Mass</span>
+            <span class="sub-specs__value">215</span>
+            <span class="sub-specs__unit">g</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Wet Mass</span>
+            <span class="sub-specs__value">~0.9</span>
+            <span class="sub-specs__unit">kg</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">High-Thrust Mode</span>
+            <span class="sub-specs__value">350</span>
+            <span class="sub-specs__unit">µN</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Specific Impulse (High Thrust)</span>
+            <span class="sub-specs__value">2500</span>
+            <span class="sub-specs__unit">s</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Impulse Capability</span>
+            <span class="sub-specs__value">5300</span>
+            <span class="sub-specs__unit">Ns</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">ΔV Margin Available</span>
+            <span class="sub-specs__value">441.6</span>
+            <span class="sub-specs__unit">m/s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="prop.arch_kicker">04 / ARCHITECTURE</p>
+          <h2 class="sub-section__title" data-i18n="prop.arch_title">Architecture</h2>
+          <p class="section-lede" data-i18n="prop.arch_intro" style="margin-top: 1.2rem;">Electrical and data interfaces integrating the propulsion module into the 6U bus.</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="Propulsion block diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1; fill: none; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; fill: none; }
+                .wire-magenta { stroke: #FF2EC2; stroke-width: 1.4; fill: none; }
+              </style>
+            </defs>
+
+            <!-- Bus -->
+            <rect class="b-fill-magenta" x="100" y="100" width="160" height="80"/>
+            <text class="b-label" x="180" y="135" text-anchor="middle">XIPHOS Q8S OBC</text>
+            <text class="b-label-sm" x="180" y="155" text-anchor="middle">Flight Software & FDIR</text>
+
+            <rect class="b-fill-magenta" x="100" y="280" width="160" height="80"/>
+            <text class="b-label" x="180" y="315" text-anchor="middle">IBEOS PCDU</text>
+            <text class="b-label-sm" x="180" y="335" text-anchor="middle">12V Power Bus (45W)</text>
+
+            <!-- Propulsion Unit -->
+            <rect class="b-fill-accent" x="450" y="160" width="220" height="140"/>
+            <text class="b-label" x="550" y="190" text-anchor="middle">ENPULSION NANO R3</text>
+            <text class="b-label-sm" x="550" y="210" text-anchor="middle">FEEP Thruster Module</text>
+
+            <rect class="b-fill" x="470" y="230" width="180" height="50"/>
+            <text class="b-label" x="560" y="255" text-anchor="middle">INDIUM PROPELLANT</text>
+            <text class="b-label-sm" x="560" y="270" text-anchor="middle">Solid State / Heated</text>
+
+            <!-- External Output -->
+            <path class="wire-cyan" d="M670 230 Q 730 230 780 230" marker-end="url(#arr)"/>
+            <text class="b-label-sm" x="725" y="220" text-anchor="middle">Ion Beam (350 µN)</text>
+
+            <!-- Connections -->
+            <path class="wire" d="M260 140 Q 355 140 450 180" marker-end="url(#arr)"/>
+            <text class="b-label-sm" x="355" y="155" text-anchor="middle">CAN / GPIO (Inhibit)</text>
+
+            <path class="wire-magenta" d="M260 320 Q 355 320 450 280" marker-end="url(#arr)"/>
+            <text class="b-label-sm" x="355" y="300" text-anchor="middle">12V DC</text>
+
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="prop.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="prop.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="prop.dec_1_title">Electric Propulsion (FEEP) Over Chemical</h3>
+              <p class="decision__body" data-i18n="prop.dec_1_body">Chemical propulsion was rejected due to structural constraints. To achieve the 271 m/s baseline, a chemical system would require nearly 1 kg of propellant and associated tanks, breaking the 1U volume allowance. The Enpulsion Nano R3 provides massive total impulse within 0.8U using solid, unpressurized Indium.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="prop.dec_2_title">High-Thrust Duty Cycle Selection</h3>
+              <p class="decision__body" data-i18n="prop.dec_2_body">While the Nano R3 can operate at a higher Isp (2960 s) with lower thrust, this mode would require burn durations (e.g., 53 minutes) that exceed the battery's depth-of-discharge limit and encroach on the orbital eclipse. The high-thrust mode (350 µN, 2500 s, 45W) allows completing maneuvers inside a safe 28-minute firing window.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="prop.dec_3_title">Continuous Magnetic Compensation</h3>
+              <p class="decision__body" data-i18n="prop.dec_3_body">During orbit injection burns, parasitic torques from center-of-mass offset and thrust misalignment arise. Rather than relying exclusively on Reaction Wheels (which would quickly saturate), the Magnetorquers possess sufficient authority to provide continuous magnetic compensation, mitigating interruptions for desaturation.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="prop.dec_4_title">Plume Contamination Management</h3>
+              <p class="decision__body" data-i18n="prop.dec_4_body">Because Indium is solid at room temperature and the FEEP emitter generates a narrow beam cone (~49°), backflow is minimal (<1%). Camera lens degradation is analytically bounded to ~3.17% transmittance loss over 3 years, eliminating the need for complex deployable baffles.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="sub-pager">
+        <a class="sub-pager__cell sub-pager__cell--prev" href="/subsystems/payload.html">
+          <span class="sub-pager__label" data-i18n="common.previous">Previous</span>
+          <span class="sub-pager__name">Payload</span>
+        </a>
+        <a class="sub-pager__cell sub-pager__cell--next" href="/subsystems/structures.html">
+          <span class="sub-pager__label" data-i18n="common.next">Next</span>
+          <span class="sub-pager__name">Structure</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

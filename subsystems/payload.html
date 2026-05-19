@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="payload.meta_title" data-meta-desc-key="payload.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="payload.meta_title">Payload // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Payload subsystem: Four independent technological and scientific demonstrators." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current">Payload</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="payload.code">01 / PAYLOAD</p>
+            <h1 class="sub-hero__h1" data-i18n="payload.title">Scientific &amp; Tech Demonstrators</h1>
+            <p class="sub-hero__lede" data-i18n="payload.lede">Four disparate payloads sharing a unified 6U architecture.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/santiago-orta.png" alt="Santiago Orta" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="payload.owner_role">Payload Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="payload.owner_name">Santiago Orta</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="telemetry" aria-hidden="true">
+      <div class="telemetry__track">
+        <span class="telemetry__item accent">PAYLOAD // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">OPTICAL EO · GECKO / IM200</span>
+        <span class="telemetry__item">BIO-PL · 2U LABSAT HERITAGE</span>
+        <span class="telemetry__item">PASSIVE · VO2 VEM SHUTTERS</span>
+        <span class="telemetry__item">IOT · PHOTONIC RADIOMETER</span>
+        <span class="telemetry__item">PL VOLUME · 3U ALLOCATED</span>
+        <span class="telemetry__item">PL MASS · ~3.27 KG</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+        
+        <span class="telemetry__item accent">PAYLOAD // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">OPTICAL EO · GECKO / IM200</span>
+        <span class="telemetry__item">BIO-PL · 2U LABSAT HERITAGE</span>
+        <span class="telemetry__item">PASSIVE · VO2 VEM SHUTTERS</span>
+        <span class="telemetry__item">IOT · PHOTONIC RADIOMETER</span>
+        <span class="telemetry__item">PL VOLUME · 3U ALLOCATED</span>
+        <span class="telemetry__item">PL MASS · ~3.27 KG</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+      </div>
+    </div>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="payload.overview_lede">Four distinct missions, one bus.</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="payload.overview_p1">BIO-LUX is designed to accommodate a versatile suite of instruments...</p>
+            <p data-i18n="payload.overview_p2">Allocated within a 3U volume and operating in a sun-synchronous orbit...</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="payload.fact_vol_label">Total PL Volume</span>
+              <strong data-i18n="payload.fact_vol_value">3U</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="payload.fact_mass_label">Total PL Mass</span>
+              <strong data-i18n="payload.fact_mass_value">~3.27 kg</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="payload.fact_power_label">Peak PL Power</span>
+              <strong data-i18n="payload.fact_power_value">15 W</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="payload.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="payload.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">EO Sensor baseline</span>
+            <span class="sub-specs__value">Dragonfly Gecko</span>
+            <span class="sub-specs__unit">1U</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">EO Sensor operational</span>
+            <span class="sub-specs__value">AAC Clyde IM200</span>
+            <span class="sub-specs__unit">F/1.2 RGB</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Off-Nadir Pointing Limit</span>
+            <span class="sub-specs__value">&le; 10</span>
+            <span class="sub-specs__unit">deg</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Max Swath (at 10° off-nadir)</span>
+            <span class="sub-specs__value">350</span>
+            <span class="sub-specs__unit">km</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Biological PL Mass</span>
+            <span class="sub-specs__value">2.66</span>
+            <span class="sub-specs__unit">kg</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Bio-PL Thermal requirement</span>
+            <span class="sub-specs__value">15 ± 10</span>
+            <span class="sub-specs__unit">°C</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">VEM Coating Material</span>
+            <span class="sub-specs__value">Vanadium Dioxide</span>
+            <span class="sub-specs__unit">VO2</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Photonic IoT Type</span>
+            <span class="sub-specs__value">Radiometer</span>
+            <span class="sub-specs__unit">WGMR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="payload.arch_kicker">04 / ARCHITECTURE</p>
+          <h2 class="sub-section__title" data-i18n="payload.arch_title">Architecture</h2>
+          <p class="section-lede" data-i18n="payload.arch_intro" style="margin-top: 1.2rem;">Data and power flow diagram across the four payload modules...</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="Payload block diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1; fill: none; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; fill: none; }
+              </style>
+            </defs>
+
+            <!-- Central OBC -->
+            <rect class="b-fill-magenta" x="40" y="180" width="160" height="100"/>
+            <text class="b-label" x="120" y="222" text-anchor="middle" data-i18n="payload.arch_lbl_obc">XIPHOS Q8S OBC</text>
+            <text class="b-label-sm" x="120" y="245" text-anchor="middle">Data &amp; Command Hub</text>
+
+            <!-- Payloads -->
+            <rect class="b-fill-accent" x="350" y="60" width="180" height="60"/>
+            <text class="b-label" x="440" y="90" text-anchor="middle" data-i18n="payload.arch_lbl_eo">OPTICAL EO SENSOR</text>
+            <text class="b-label-sm" x="440" y="108" text-anchor="middle">LVDS / CAN / I²C</text>
+
+            <rect class="b-fill-accent" x="350" y="150" width="180" height="60"/>
+            <text class="b-label" x="440" y="180" text-anchor="middle" data-i18n="payload.arch_lbl_bio">BIOLOGICAL PL</text>
+            <text class="b-label-sm" x="440" y="198" text-anchor="middle">UART / Dedicated Heater</text>
+
+            <rect class="b-fill-accent" x="350" y="240" width="180" height="60"/>
+            <text class="b-label" x="440" y="270" text-anchor="middle" data-i18n="payload.arch_lbl_vem">PASSIVE VEM</text>
+            <text class="b-label-sm" x="440" y="288" text-anchor="middle">Thermocouples / I²C</text>
+
+            <rect class="b-fill-accent" x="350" y="330" width="180" height="60"/>
+            <text class="b-label" x="440" y="360" text-anchor="middle" data-i18n="payload.arch_lbl_iot">PHOTONIC IOT</text>
+            <text class="b-label-sm" x="440" y="378" text-anchor="middle">UART / CAN</text>
+
+            <!-- Storage & Tx -->
+            <rect class="b-fill" x="660" y="105" width="140" height="50"/>
+            <text class="b-label" x="730" y="130" text-anchor="middle" data-i18n="payload.arch_lbl_mem">MASS MEMORY</text>
+
+            <rect class="b-fill" x="660" y="285" width="140" height="50"/>
+            <text class="b-label" x="730" y="310" text-anchor="middle" data-i18n="payload.arch_lbl_tx">S-BAND TX</text>
+
+            <!-- Connections -->
+            <path class="wire-cyan" d="M200 200 Q 275 200 350 90" marker-end="url(#arr)"/>
+            <path class="wire" d="M200 215 Q 275 215 350 180" marker-end="url(#arr)"/>
+            <path class="wire" d="M200 245 Q 275 245 350 270" marker-end="url(#arr)"/>
+            <path class="wire" d="M200 260 Q 275 260 350 360" marker-end="url(#arr)"/>
+
+            <line class="wire-cyan" x1="530" y1="90" x2="660" y2="130" marker-end="url(#arr)"/>
+            <line class="wire" x1="730" y1="155" x2="730" y2="285" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="payload.comp_kicker">05 / COMPONENTS</p>
+          <h2 class="sub-section__title" data-i18n="payload.comp_title">Components</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">01</span>
+            <p class="component-card__tag" data-i18n="payload.comp_1_tag">OPTICAL EO</p>
+            <h3 class="component-card__name" data-i18n="payload.comp_1_name">AAC Clyde IM200</h3>
+            <p class="component-card__desc" data-i18n="payload.comp_1_desc">Low F-number (1.2) RGB camera optimized for nighttime light pollution imaging.</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">02</span>
+            <p class="component-card__tag" data-i18n="payload.comp_2_tag">BIOLOGICAL</p>
+            <h3 class="component-card__name" data-i18n="payload.comp_2_name">LabSat-based Unit</h3>
+            <p class="component-card__desc" data-i18n="payload.comp_2_desc">2U module housing a ribozyme microfluidic card and lunar agriculture seed experiments.</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">03</span>
+            <p class="component-card__tag" data-i18n="payload.comp_3_tag">THERMAL PASSIVE</p>
+            <h3 class="component-card__name" data-i18n="payload.comp_3_name">VO2 Smart Shutters</h3>
+            <p class="component-card__desc" data-i18n="payload.comp_3_desc">5-inch diameter Vanadium Dioxide coating on Aluminum substrate acting as a passive VEM.</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">04</span>
+            <p class="component-card__tag" data-i18n="payload.comp_4_tag">TELECOM IOT</p>
+            <h3 class="component-card__name" data-i18n="payload.comp_4_name">Photonic Radiometer</h3>
+            <p class="component-card__desc" data-i18n="payload.comp_4_desc">Room-temperature photonic integrated circuit (PIC) utilizing optical upconversion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="payload.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="payload.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="payload.dec_1_title">Gecko Imager as Sizing Baseline</h3>
+              <p class="decision__body" data-i18n="payload.dec_1_body">While the AAC Clyde IM200 is used for actual light pollution observations, the heavier and power-hungry Dragonfly Gecko acts as the sizing baseline to guarantee maximum structural and power capacity.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="payload.dec_2_title">Off-Nadir Pointing Strategy</h3>
+              <p class="decision__body" data-i18n="payload.dec_2_body">To increase the swath width up to 350 km and achieve revisit time requirements without exceeding a 100m GSD, a maximum off-nadir angle of 10° was implemented.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="payload.dec_3_title">Thermal Isolation for Bio-PL</h3>
+              <p class="decision__body" data-i18n="payload.dec_3_body">The biological module is structurally isolated and supported by a dedicated 4W continuous heater configuration to maintain strict 15 ± 10 °C boundaries regardless of external LEO cold phases.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="sub-pager">
+        <a class="sub-pager__cell sub-pager__cell--prev" href="/subsystems/ttc.html">
+          <span class="sub-pager__label" data-i18n="common.previous">Previous</span>
+          <span class="sub-pager__name">TT&amp;C</span>
+        </a>
+        <a class="sub-pager__cell sub-pager__cell--next" href="/subsystems/propulsion.html">
+          <span class="sub-pager__label" data-i18n="common.next">Next</span>
+          <span class="sub-pager__name">Propulsion</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

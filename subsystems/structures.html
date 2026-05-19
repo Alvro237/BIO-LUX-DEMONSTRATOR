@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="str.meta_title" data-meta-desc-key="str.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="str.meta_title">Structure // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Structure subsystem: Mechanical bus and component accommodation." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current" data-i18n="nav.structure">Structure</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="str.code">03 / STRUCTURE</p>
+            <h1 class="sub-hero__h1" data-i18n="str.title">Mechanical Bus &amp; Accommodation</h1>
+            <p class="sub-hero__lede" data-i18n="str.lede">Providing the rigid foundation for four demonstrators while surviving the dynamic launch environment.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/guillermo-toledo.png" alt="Guillermo Toledo" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="str.owner_role">Structure Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="str.owner_name">Guillermo Toledo</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="telemetry" aria-hidden="true">
+      <div class="telemetry__track">
+        <span class="telemetry__item accent">STR // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">FRAME · 2NDSPACE VERSE-06</span>
+        <span class="telemetry__item">FORM FACTOR · 6U CUBESAT</span>
+        <span class="telemetry__item">STR MASS · 955 G</span>
+        <span class="telemetry__item">WET MASS · 8.113 KG</span>
+        <span class="telemetry__item">PL VOLUME · 3U ALLOCATED</span>
+        <span class="telemetry__item">MATERIAL · AL-6061-T6</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+        
+        <span class="telemetry__item accent">STR // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">FRAME · 2NDSPACE VERSE-06</span>
+        <span class="telemetry__item">FORM FACTOR · 6U CUBESAT</span>
+        <span class="telemetry__item">STR MASS · 955 G</span>
+        <span class="telemetry__item">WET MASS · 8.113 KG</span>
+        <span class="telemetry__item">PL VOLUME · 3U ALLOCATED</span>
+        <span class="telemetry__item">MATERIAL · AL-6061-T6</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+      </div>
+    </div>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="str.overview_lede">A modular integration concept.</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="str.overview_p1">The structural subsystem of the BIO-LUX platform is based on a COTS 6U CubeSat structure manufactured by 2NDSpace (model VERSE-06).</p>
+            <p data-i18n="str.overview_p2">Adopting a COTS structure significantly reduces development risk while guaranteeing compliance with the CubeSat Design Specification (CDS). The layout strictly controls the Center of Mass (CoM) drift and optimizes mechanical compatibility through standard PC104 PCB stack layouts.</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="str.fact_mass_label">Frame Mass</span>
+              <strong data-i18n="str.fact_mass_value">955 g</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="str.fact_pl_label">PL Allocation</span>
+              <strong data-i18n="str.fact_pl_value">3U / 40% Mass</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="str.fact_com_label">CoM Deviation (Z)</span>
+              <strong data-i18n="str.fact_com_value">18.5 mm</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="str.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="str.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Primary Frame</span>
+            <span class="sub-specs__value">2NDSpace VERSE-06</span>
+            <span class="sub-specs__unit">COTS</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Dimensions</span>
+            <span class="sub-specs__value">100 x 226.3 x 366</span>
+            <span class="sub-specs__unit">mm</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Material Alloy</span>
+            <span class="sub-specs__value">Al-6061-T6</span>
+            <span class="sub-specs__unit">—</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Frame Assembly Mass</span>
+            <span class="sub-specs__value">955</span>
+            <span class="sub-specs__unit">g</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total S/C Mass</span>
+            <span class="sub-specs__value">8.113</span>
+            <span class="sub-specs__unit">kg</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">CoM Drift (X / Y / Z)</span>
+            <span class="sub-specs__value">3.2 / 3.9 / 18.5</span>
+            <span class="sub-specs__unit">mm</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Internal Standard</span>
+            <span class="sub-specs__value">PC104</span>
+            <span class="sub-specs__unit">Configurable</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Deployer Interface</span>
+            <span class="sub-specs__value">Rail-based</span>
+            <span class="sub-specs__unit">w/ Kill Switches</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="str.arch_kicker">04 / INTERNAL LAYOUT</p>
+          <h2 class="sub-section__title" data-i18n="str.arch_title">Component Accommodation</h2>
+          <p class="section-lede" data-i18n="str.arch_intro" style="margin-top: 1.2rem;">Volumetric distribution within the 6U profile to satisfy attitude, thermal, and payload viewing constraints.</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <!-- 6U Volumetric Layout Representation -->
+          <svg viewBox="0 0 900 460" role="img" aria-label="Internal 6U Layout diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-fill-gold { fill: #14141F; stroke: #FFB800; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; stroke-dasharray: 4 4; fill: none; }
+              </style>
+            </defs>
+
+            <!-- 6U Outer Frame (Dashed) -->
+            <rect x="150" y="80" width="600" height="300" fill="none" stroke="rgba(155,155,168,0.36)" stroke-width="2" stroke-dasharray="6 6"/>
+            
+            <!-- U Grids (Visual separators) -->
+            <line x1="350" y1="80" x2="350" y2="380" stroke="rgba(155,155,168,0.16)" stroke-width="1"/>
+            <line x1="550" y1="80" x2="550" y2="380" stroke="rgba(155,155,168,0.16)" stroke-width="1"/>
+            <line x1="150" y1="230" x2="750" y2="230" stroke="rgba(155,155,168,0.16)" stroke-width="1"/>
+
+            <text class="b-label-sm" x="120" y="235" text-anchor="middle">Z-AXIS</text>
+            <text class="b-label-sm" x="450" y="60" text-anchor="middle">X-AXIS (NADIR)</text>
+
+            <!-- PROPULSION (Centered on -X) -->
+            <rect class="b-fill-gold" x="160" y="240" width="180" height="130"/>
+            <text class="b-label" x="250" y="300" text-anchor="middle" fill="#FFB800">ENPULSION NANO R3</text>
+            <text class="b-label-sm" x="250" y="315" text-anchor="middle">Aligned with CoM</text>
+
+            <!-- CAMERA PL (1U on -X) -->
+            <rect class="b-fill-accent" x="160" y="90" width="180" height="130"/>
+            <text class="b-label" x="250" y="150" text-anchor="middle">OPTICAL PL (1U)</text>
+            <text class="b-label-sm" x="250" y="165" text-anchor="middle">Nadir Facing (-X)</text>
+
+            <!-- AVIONICS STACK (Center 2U) -->
+            <rect class="b-fill" x="360" y="90" width="180" height="280"/>
+            <text class="b-label" x="450" y="160" text-anchor="middle">PC104 AVIONICS STACK</text>
+            <text class="b-label-sm" x="450" y="180" text-anchor="middle">OBC / EPS / TTC</text>
+            <text class="b-label-sm" x="450" y="195" text-anchor="middle">Reaction Wheels (4x)</text>
+            <text class="b-label-sm" x="450" y="210" text-anchor="middle">Battery Pack</text>
+
+            <!-- BIOLOGICAL & OTHER PL (Back 2U) -->
+            <rect class="b-fill-magenta" x="560" y="90" width="180" height="280"/>
+            <text class="b-label" x="650" y="215" text-anchor="middle">BIO &amp; TECH PL (2U)</text>
+            <text class="b-label-sm" x="650" y="235" text-anchor="middle">Thermally Isolated</text>
+            <text class="b-label-sm" x="650" y="250" text-anchor="middle">Deep Space / Lat Facing</text>
+
+            <!-- Indicators for external mounts -->
+            <path class="wire-cyan" d="M150 155 L 90 155"/>
+            <text class="b-label-sm" x="70" y="158" text-anchor="end">S-Band Patch (Ext)</text>
+
+            <path class="wire-cyan" d="M450 80 L 450 30"/>
+            <text class="b-label-sm" x="450" y="20" text-anchor="middle">GNSS Antenna (Zenith +Z)</text>
+
+            <path class="wire-cyan" d="M750 230 L 810 230"/>
+            <text class="b-label-sm" x="820" y="233" text-anchor="start">UHF Deployable (Lat +Y)</text>
+
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="str.comp_kicker">05 / COMPONENTS</p>
+          <h2 class="sub-section__title" data-i18n="str.comp_title">Components</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">01</span>
+            <p class="component-card__tag" data-i18n="str.comp_1_tag">PRIMARY FRAME</p>
+            <h3 class="component-card__name" data-i18n="str.comp_1_name">2NDSpace VERSE-06</h3>
+            <p class="component-card__desc" data-i18n="str.comp_1_desc">High-grade Aluminum 6061-T6 modular structure with PC104 inner frames.</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">02</span>
+            <p class="component-card__tag" data-i18n="str.comp_2_tag">DEPLOYMENT</p>
+            <h3 class="component-card__name" data-i18n="str.comp_2_name">Kill Switches</h3>
+            <p class="component-card__desc" data-i18n="str.comp_2_desc">4x compliant kill switches integrated into the rail guides to inhibit power prior to ejection.</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">03</span>
+            <p class="component-card__tag" data-i18n="str.comp_3_tag">ELECTRONICS MOUNT</p>
+            <h3 class="component-card__name" data-i18n="str.comp_3_name">PC104 Bus Interface</h3>
+            <p class="component-card__desc" data-i18n="str.comp_3_desc">Industry-standard layout permitting compact vertical and horizontal stacking of internal boards.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="str.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="str.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="str.dec_1_title">COTS Structure Validation</h3>
+              <p class="decision__body" data-i18n="str.dec_1_body">A trade-off comprising 13 suppliers concluded the 2NDSpace VERSE-06 optimizes mass (955 g) without sacrificing integration modularity, thus avoiding the long-lead verification risks of a custom-machined chassis.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="str.dec_2_title">Propulsion Center of Mass Alignment</h3>
+              <p class="decision__body" data-i18n="str.dec_2_body">The propulsion module occupies less than 1U and is explicitly centered on the -X face. This negates severe moment arms between the thrust vector and the S/C Center of Mass, preventing uncontrollable disturbance torques.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="str.dec_3_title">Distributed 3U Payload Accommodation</h3>
+              <p class="decision__body" data-i18n="str.dec_3_body">The 3U payload budget is deliberately split. 1U is allocated to the nadir face (-X) for unobstructed camera tracking, while the remaining 2U are nested internally (+Z/+X faces) allowing deep-space thermal isolation for biological and tech payloads.</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="str.dec_4_title">Magnetic Cleanliness Routing</h3>
+              <p class="decision__body" data-i18n="str.dec_4_body">To prevent internal electromagnetic interference, the AOCS Magnetometer (MTM) is positioned at the extreme end of the chassis, maximizing its physical separation from the Reaction Wheels and Magnetorquers.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="sub-pager">
+        <a class="sub-pager__cell sub-pager__cell--prev" href="/subsystems/propulsion.html">
+          <span class="sub-pager__label" data-i18n="common.previous">Previous</span>
+          <span class="sub-pager__name">Propulsion</span>
+        </a>
+        <a class="sub-pager__cell sub-pager__cell--next" href="/subsystems/aocs.html">
+          <span class="sub-pager__label" data-i18n="common.next">Next</span>
+          <span class="sub-pager__name">AOCS</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

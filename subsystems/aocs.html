@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="aocs.meta_title" data-meta-desc-key="aocs.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="aocs.meta_title">AOCS // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Attitude & Orbit Control subsystem." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link is-active" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current">AOCS</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="aocs.code">04 / AOCS</p>
+            <h1 class="sub-hero__h1" data-i18n="aocs.title">Attitude &amp; Orbit Control</h1>
+            <p class="sub-hero__lede" data-i18n="aocs.lede">Precision pointing and stabilization for Earth observation and orbital maneuvers.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/sergio-hernandez.png" alt="Sergio Hernández" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="aocs.owner_role">AOCS Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="aocs.owner_name">Sergio Hernández</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="aocs.overview_lede">AOCS provides 3-axis stabilization using a reaction wheel-based fine pointing system..</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="aocs.overview_p1">Fine attitude determination is performed with a Star Tracker aided by an IMU into an Extended Kalman Filter, while coarse and safe-mode functions rely on sun sensors and the magnetometer..</p>
+            <p data-i18n="aocs.overview_p2">The AOCS guarantees an Absolute Pointing Error (APE) of ≤ 0.28° and minimizes image smear during high-resolution optical payload operations..</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="aocs.fact_1_label">Absolute Pointing Error</span>
+              <strong data-i18n="aocs.fact_1_value">≤ 0.28°</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="aocs.fact_2_label">Max Image Smear (RPE)</span>
+              <strong data-i18n="aocs.fact_2_value">≤ 0.004°/s</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="aocs.fact_3_label">Detumbling Time</span>
+              <strong data-i18n="aocs.fact_3_value">&lt; 3 orbits</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="aocs.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="aocs.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Control Architecture</span>
+            <span class="sub-specs__value">3-Axis Active</span>
+            <span class="sub-specs__unit">—</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Absolute Pointing Error (APE)</span>
+            <span class="sub-specs__value">≤ 0.28</span>
+            <span class="sub-specs__unit">deg (3σ)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Relative Pointing Error (RPE)</span>
+            <span class="sub-specs__value">≤ 0.004</span>
+            <span class="sub-specs__unit">deg/s (3σ)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Absolute Knowledge Error (AKE)</span>
+            <span class="sub-specs__value">≤ 73.71</span>
+            <span class="sub-specs__unit">arcsec (3σ)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Reaction Wheel Torque</span>
+            <span class="sub-specs__value">6.0</span>
+            <span class="sub-specs__unit">mNm</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Magnetorquer Dipole</span>
+            <span class="sub-specs__value">0.40</span>
+            <span class="sub-specs__unit">Am²</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Slew Agility (30° slew)</span>
+            <span class="sub-specs__value">≤ 60</span>
+            <span class="sub-specs__unit">sec</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">ADCS Microprocessor</span>
+            <span class="sub-specs__value">ARM Cortex-M7</span>
+            <span class="sub-specs__unit">300 MHz</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="aocs.arch_kicker">04 / ARCHITECTURE</p>
+          <h2 class="sub-section__title" data-i18n="aocs.arch_title">Architecture</h2>
+          <p class="section-lede" data-i18n="aocs.arch_intro" style="margin-top: 1.2rem;">Top-level block diagram of the AOCS sensor fusion and actuator control loop..</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="AOCS Block Diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1; fill: none; }
+              </style>
+            </defs>
+
+            <!-- Sensors -->
+            <rect class="b-fill" x="80" y="80" width="130" height="50"/>
+            <text class="b-label" x="145" y="105" text-anchor="middle">STAR TRACKER</text>
+            <text class="b-label-sm" x="145" y="120" text-anchor="middle">Fine Attitude</text>
+            
+            <rect class="b-fill" x="80" y="160" width="130" height="50"/>
+            <text class="b-label" x="145" y="185" text-anchor="middle">IMU (GYROS)</text>
+            <text class="b-label-sm" x="145" y="200" text-anchor="middle">High-Rate Prop.</text>
+            
+            <rect class="b-fill" x="80" y="240" width="130" height="50"/>
+            <text class="b-label" x="145" y="265" text-anchor="middle">SUN SENSORS (x6)</text>
+            <text class="b-label-sm" x="145" y="280" text-anchor="middle">Safe Mode / Coarse</text>
+
+            <rect class="b-fill" x="80" y="320" width="130" height="50"/>
+            <text class="b-label" x="145" y="345" text-anchor="middle">MAGNETOMETER</text>
+            <text class="b-label-sm" x="145" y="360" text-anchor="middle">B-Field Vector</text>
+
+            <!-- Controller -->
+            <rect class="b-fill-accent" x="380" y="150" width="160" height="150"/>
+            <text class="b-label" x="460" y="215" text-anchor="middle">ADCS PROCESSOR</text>
+            <text class="b-label-sm" x="460" y="235" text-anchor="middle">EKF Sensor Fusion</text>
+            <text class="b-label-sm" x="460" y="250" text-anchor="middle">Control Laws</text>
+
+            <!-- Actuators -->
+            <rect class="b-fill-accent" x="680" y="120" width="140" height="60"/>
+            <text class="b-label" x="750" y="148" text-anchor="middle">REACTION WHEELS (x4)</text>
+            <text class="b-label-sm" x="750" y="165" text-anchor="middle">Fine Pointing / Slew</text>
+
+            <rect class="b-fill-accent" x="680" y="280" width="140" height="60"/>
+            <text class="b-label" x="750" y="308" text-anchor="middle">MAGNETORQUERS (x3)</text>
+            <text class="b-label-sm" x="750" y="325" text-anchor="middle">Detumble / Desat</text>
+
+            <!-- Wires -->
+            <path class="wire" d="M210 105 L 380 180" marker-end="url(#arr)"/>
+            <path class="wire" d="M210 185 L 380 205" marker-end="url(#arr)"/>
+            <path class="wire" d="M210 265 L 380 245" marker-end="url(#arr)"/>
+            <path class="wire" d="M210 345 L 380 270" marker-end="url(#arr)"/>
+
+            <path class="wire" d="M540 200 L 680 150" marker-end="url(#arr)"/>
+            <path class="wire" d="M540 250 L 680 310" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="aocs.comp_kicker">05 / COMPONENTS</p>
+          <h2 class="sub-section__title" data-i18n="aocs.comp_title">Components</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+  <span class="component-card__index" aria-hidden="true">01</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_1_tag">FINE SENSOR</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_1_name">Star Tracker (TY-Space PST3S-K4)</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_1_desc">High-precision star tracker providing absolute attitude knowledge for the fine-pointing loop.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">02</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_2_tag">HIGH-RATE SENSOR</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_2_name">IMU (ADIS16495)</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_2_desc">Low-noise gyroscope and accelerometer propagating the attitude estimate at 4250 Hz between star-tracker updates.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">03</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_3_tag">FINE ACTUATOR</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_3_name">Reaction Wheels (NanoAvionics 4RW0)</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_3_desc">Four reaction wheels arranged in a tetrahedron, providing 3-axis redundancy and precise pointing authority.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">04</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_4_tag">COARSE ACTUATOR</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_4_name">Magnetorquers (CubeSpace CR0004)</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_4_desc">Three magnetorquer rods executing B-dot detumbling and continuous reaction-wheel desaturation.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">05</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_5_tag">COARSE SENSORS</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_5_name">Sun Sensors &amp; Magnetometer</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_5_desc">Six TensorTech sun sensors and an AAC Clyde fluxgate magnetometer supporting safe-mode sun-pointing and detumbling.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">06</span>
+  <p class="component-card__tag" data-i18n="aocs.comp_6_tag">COMPUTE</p>
+  <h3 class="component-card__name" data-i18n="aocs.comp_6_name">Dedicated ADCS Processor</h3>
+  <p class="component-card__desc" data-i18n="aocs.comp_6_desc">Dedicated ARM Cortex-M7 board (SAMV71Q21RT) running FreeRTOS, isolating the EKF and control loops from the primary CD&amp;H workload.</p>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="aocs.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="aocs.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+<article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="aocs.dec_1_title">Tetrahedral Reaction-Wheel Configuration</h3>
+    <p class="decision__body" data-i18n="aocs.dec_1_body">Four wheels in a tetrahedral layout retain full 3-axis control even after a single wheel failure, satisfying the requirement that no single AOCS fault shall prevent safe-mode entry or recovery.</p>
+  </div>
+</article>
+<article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="aocs.dec_2_title">Dedicated ADCS Processor</h3>
+    <p class="decision__body" data-i18n="aocs.dec_2_body">By off-loading sensor fusion and control loops to a dedicated SAMV71Q21RT microcontroller, the EKF runs in a deterministic environment without resource contention from the primary flight computer.</p>
+  </div>
+</article>
+<article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="aocs.dec_3_title">B-Dot Detumbling Isolation</h3>
+    <p class="decision__body" data-i18n="aocs.dec_3_body">Detumbling relies exclusively on the magnetometer and magnetorquers using a B-dot law. The reaction wheels and star tracker remain off, conserving energy and avoiding wheel saturation at high rotation rates.</p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+    <section class="sub-section sub-standards">
+  <div class="container">
+    <div class="sub-section__head">
+      <p class="sub-section__kicker" data-i18n="aocs.std_kicker">07 / STANDARDS</p>
+      <h2 class="sub-section__title" data-i18n="aocs.std_title">Standards &amp; references</h2>
+      <p class="section-lede" data-i18n="aocs.std_intro" style="margin-top: 1.2rem;">…</p>
+    </div>
+    <div class="sub-standards__list">
+      <!-- chips específicos por subsistema, ver abajo -->
+      <span class="standard-chip">ECSS-E-ST-60-10C</span>
+      <span class="standard-chip">ECSS-E-ST-60-20C</span>
+      <span class="standard-chip">ECSS-E-ST-20-21C</span>
+      <span class="standard-chip">ECSS-E-ST-10-04C</span>
+      <span class="standard-chip">IADC-02-01 Rev.3</span>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

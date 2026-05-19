@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="eps_th.meta_title" data-meta-desc-key="eps_th.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="eps_th.meta_title">EPS · Thermal // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Electrical Power and Thermal subsystem." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link is-active" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current">EPS &amp; Thermal</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="eps_th.code">05 / EPS · THERMAL</p>
+            <h1 class="sub-hero__h1" data-i18n="eps_th.title">Power &amp; Thermal Control</h1>
+            <p class="sub-hero__lede" data-i18n="eps_th.lede">The energetic heart of BIO-LUX and the shield against LEO's extreme thermal environment.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/alvaro-casillas.png" alt="Álvaro Casillas" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="eps_th.owner_role">EPS &amp; Thermal Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="eps_th.owner_name">Álvaro Casillas</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="eps_th.overview_lede">EPS guarantees power generation, storage, and distribution, while the Thermal subsystem maintains all components within safe limits.</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="eps_th.overview_p1">Power generation relies on deployed and body-mounted triple-junction solar panels. The Power Conditioning and Distribution Unit (PCDU) uses MPPT architecture to maximize efficiency across varying sun angles.</p>
+            <p data-i18n="eps_th.overview_p2">Thermal control is mostly passive, using dedicated radiators, thermal straps for high-dissipation units (OBC, Bio-PL), and variable emittance materials (VEM). A 4W active heater protects the batteries during deep eclipses.</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="eps_th.fact_1_label">Peak Generation</span>
+              <strong data-i18n="eps_th.fact_1_value">58 W</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="eps_th.fact_2_label">Battery Capacity</span>
+              <strong data-i18n="eps_th.fact_2_value">45 Wh</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="eps_th.fact_3_label">Heater Power</span>
+              <strong data-i18n="eps_th.fact_3_value">4.0 W</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="eps_th.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="eps_th.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Solar Cell Technology</span>
+            <span class="sub-specs__value">GaAs Triple-Junction</span>
+            <span class="sub-specs__unit">30% BOL Eff.</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Peak Generation</span>
+            <span class="sub-specs__value">57.9</span>
+            <span class="sub-specs__unit">W</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Battery Configuration</span>
+            <span class="sub-specs__value">4S1P Li-ion</span>
+            <span class="sub-specs__unit">45 Wh</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">PCDU Architecture</span>
+            <span class="sub-specs__value">MPPT</span>
+            <span class="sub-specs__unit">150 W limit</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Regulated Buses</span>
+            <span class="sub-specs__value">3.3V, 5V, 12V</span>
+            <span class="sub-specs__unit">—</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Thermal Straps</span>
+            <span class="sub-specs__value">Copper</span>
+            <span class="sub-specs__unit">1 W/K</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Active Heating</span>
+            <span class="sub-specs__value">4.0</span>
+            <span class="sub-specs__unit">W (Battery)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="eps_th.arch_kicker">04 / ARCHITECTURE</p>
+          <h2 class="sub-section__title" data-i18n="eps_th.arch_title">Architecture</h2>
+          <p class="section-lede" data-i18n="eps_th.arch_intro" style="margin-top: 1.2rem;">Top-level block diagram of the power generation, MPPT conditioning, and thermal distribution network.</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="EPS and Thermal Block Diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1; fill: none; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; fill: none; }
+              </style>
+            </defs>
+
+            <!-- Generation -->
+            <rect class="b-fill" x="80" y="120" width="140" height="50"/>
+            <text class="b-label" x="150" y="145" text-anchor="middle">DEPLOYABLE ARRAYS</text>
+            <text class="b-label-sm" x="150" y="160" text-anchor="middle">2NDSpace 6U</text>
+
+            <rect class="b-fill" x="80" y="240" width="140" height="50"/>
+            <text class="b-label" x="150" y="265" text-anchor="middle">BODY-MOUNTED ARRAYS</text>
+
+            <!-- Conditioning -->
+            <rect class="b-fill-accent" x="350" y="150" width="160" height="110"/>
+            <text class="b-label" x="430" y="190" text-anchor="middle">PCDU (E14-150)</text>
+            <text class="b-label-sm" x="430" y="210" text-anchor="middle">MPPT &amp; LCL</text>
+            <text class="b-label-sm" x="430" y="225" text-anchor="middle">Regulated Outputs</text>
+
+            <!-- Storage -->
+            <rect class="b-fill" x="350" y="320" width="160" height="60"/>
+            <text class="b-label" x="430" y="348" text-anchor="middle">LI-ION BATTERY</text>
+            <text class="b-label-sm" x="430" y="365" text-anchor="middle">45 Wh / 16.8V</text>
+
+            <rect class="b-fill-magenta" x="525" y="335" width="80" height="30"/>
+            <text class="b-label" x="565" y="354" text-anchor="middle" style="fill:#FF2EC2;">4W HEATER</text>
+
+            <!-- Distribution -->
+            <rect class="b-fill" x="650" y="80" width="140" height="40"/>
+            <text class="b-label" x="720" y="105" text-anchor="middle">3.3V BUS (TT&amp;C, IMU)</text>
+
+            <rect class="b-fill" x="650" y="150" width="140" height="40"/>
+            <text class="b-label" x="720" y="175" text-anchor="middle">5V BUS (PAYLOADS)</text>
+
+            <rect class="b-fill" x="650" y="220" width="140" height="40"/>
+            <text class="b-label" x="720" y="245" text-anchor="middle">12V BUS (PROPULSION)</text>
+
+            <!-- Thermal Straps -->
+            <rect class="b-fill" x="650" y="320" width="140" height="60"/>
+            <text class="b-label" x="720" y="348" text-anchor="middle">RADIATORS</text>
+            <text class="b-label-sm" x="720" y="365" text-anchor="middle">Thermal Straps to OBC</text>
+
+            <!-- Wires -->
+            <path class="wire-cyan" d="M220 145 L 350 185" marker-end="url(#arr)"/>
+            <path class="wire-cyan" d="M220 265 L 350 225" marker-end="url(#arr)"/>
+            
+            <path class="wire-cyan" d="M430 260 L 430 320" marker-end="url(#arr)"/>
+            <path class="wire-cyan" d="M410 320 L 410 260" marker-end="url(#arr)"/>
+
+            <path class="wire" d="M510 185 L 650 100" marker-end="url(#arr)"/>
+            <path class="wire" d="M510 205 L 650 170" marker-end="url(#arr)"/>
+            <path class="wire" d="M510 225 L 650 240" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="eps_th.comp_kicker">05 / COMPONENTS</p>
+          <h2 class="sub-section__title" data-i18n="eps_th.comp_title">Components</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+  <span class="component-card__index" aria-hidden="true">01</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_1_tag">GENERATION</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_1_name">Deployable Solar Arrays (2 × 6U)</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_1_desc">Triple-junction GaAs deployable arrays (30% BOL efficiency) plus body-mounted panels, raising peak generation to 58 W.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">02</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_2_tag">STORAGE</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_2_name">Li-ion Battery (Ibeos 45-WH)</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_2_desc">4S1P Li-ion pack from Ibeos, 45 Wh capacity, 16.8 V nominal. Sized to survive the longest eclipse, the post-insertion stand-by and a full detumbling cycle with margin.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">03</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_3_tag">CONDITIONING</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_3_name">PCDU (Ibeos E14-150)</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_3_desc">150 W PCDU with MPPT trackers, LCL protection, BCR/BDR battery regulation and full FDIR integration on every regulated bus.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">04</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_4_tag">THERMAL · ACTIVE</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_4_name">Battery Heater (4 W)</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_4_desc">Single active 4 W heater on the unregulated bus, protecting the battery from fatal undervoltage during deep eclipses.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">05</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_5_tag">THERMAL · CONDUCTIVE</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_5_name">Conductive Straps &amp; Radiators</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_5_desc">Copper conductive straps (1 W/K) and deep-space facing radiators routing the heat dissipated by the OBC and the biological payload.</p>
+</article>
+<article class="component-card">
+  <span class="component-card__index" aria-hidden="true">06</span>
+  <p class="component-card__tag" data-i18n="eps_th.comp_6_tag">THERMAL · PASSIVE</p>
+  <h3 class="component-card__name" data-i18n="eps_th.comp_6_name">VO₂ VEM Coating</h3>
+  <p class="component-card__desc" data-i18n="eps_th.comp_6_desc">Vanadium-Dioxide Variable-Emittance-Material coating acting as a secondary passive thermal demonstrator on the radiator panel.</p>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="eps_th.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="eps_th.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="eps_th.dec_1_title">MPPT over DET Architecture</h3>
+    <p class="decision__body" data-i18n="eps_th.dec_1_body">Maximum Power Point Tracking is preferred over Direct Energy Transfer: with deployable arrays at varying sun angles, MPPT continuously optimises the operating point and extracts a substantially larger fraction of the available power.</p>
+  </div>
+</article>
+<article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="eps_th.dec_2_title">Deployable Arrays for Power Margin</h3>
+    <p class="decision__body" data-i18n="eps_th.dec_2_body">Non-deployable panels would simplify mechanics but cap the available power. The 2 × 6U deployable configuration raises peak power to 58 W, leaving margin to run propulsion (45 W) and several payloads concurrently.</p>
+  </div>
+</article>
+<article class="decision">
+  <span class="decision__index" aria-hidden="true"></span>
+  <div>
+    <h3 class="decision__title" data-i18n="eps_th.dec_3_title">Passive-First Thermal Management</h3>
+    <p class="decision__body" data-i18n="eps_th.dec_3_body">Thermal control is strictly passive whenever possible — optical coatings, radiators, conductive straps — to conserve power. The only active element is the battery heater, essential to avoid fatal undervoltage during long eclipses.</p>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+    <section class="sub-section sub-standards">
+  <div class="container">
+    <div class="sub-section__head">
+      <p class="sub-section__kicker" data-i18n="eps_th.std_kicker">07 / STANDARDS</p>
+      <h2 class="sub-section__title" data-i18n="eps_th.std_title">Standards &amp; references</h2>
+      <p class="section-lede" data-i18n="eps_th.std_intro" style="margin-top: 1.2rem;">…</p>
+    </div>
+    <div class="sub-standards__list">
+      <!-- chips específicos por subsistema, ver abajo -->
+       <span class="standard-chip">ECSS-E-ST-20-08C Rev.2</span>
+  <span class="standard-chip">ECSS-E-ST-20-20C</span>
+  <span class="standard-chip">ECSS-E-ST-20C Rev.2</span>
+  <span class="standard-chip">ECSS-E-ST-31C Rev.1</span>
+  <span class="standard-chip">ECSS-E-HB-31-01 Part 4A</span>
+  <span class="standard-chip">ECSS-Q-ST-70-71C</span>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

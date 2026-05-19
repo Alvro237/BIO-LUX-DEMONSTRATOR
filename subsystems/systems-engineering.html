@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="se.meta_title" data-meta-desc-key="se.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="se.meta_title">Systems Engineering // BIO-LUX</title>
+  <meta name="description" content="Systems Engineering subsystem of BIO-LUX." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current">Systems Engineering</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="se.code">07 / SYSTEMS ENG.</p>
+            <h1 class="sub-hero__h1" data-i18n="se.title">Systems Engineering</h1>
+            <p class="sub-hero__lede" data-i18n="se.lede">The overarching logic, operational modes, and mass/power budgets integrating the spacecraft[cite: 6].</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/victor-salas.png" alt="Víctor Salas" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="se.owner_role">PM &amp; Systems Eng. Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="se.owner_name">Víctor Salas</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="se.overview_lede">Systems Engineering orchestrates the Concept of Operations (ConOps), failure management, and strict mass/power budgets[cite: 6].</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="se.overview_p1">BIO-LUX operates semi-autonomously across six defined modes. The FDIR (Failure Detection, Isolation, and Recovery) architecture employs a five-layer defense, from silicon-level error correction to ground-commanded recovery[cite: 6].</p>
+            <p data-i18n="se.overview_p2">A rigorous budgeting philosophy ensures that the 12 kg limit is met with a comfortable 2.7 kg margin, and power is conservatively allocated to support all four payload profiles[cite: 6].</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="se.fact_1_label">Total Wet Mass</span>
+              <strong data-i18n="se.fact_1_value">8.11 kg</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="se.fact_2_label">Mass Margin</span>
+              <strong data-i18n="se.fact_2_value">2.7 kg</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="se.fact_3_label">FDIR Layers</span>
+              <strong data-i18n="se.fact_3_value">5 Layers</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="se.specs_kicker">03 / SYSTEM BUDGETS</p>
+          <h2 class="sub-section__title" data-i18n="se.specs_title">Platform Budgets</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Payload Mass</span>
+            <span class="sub-specs__value">3.27</span>
+            <span class="sub-specs__unit">kg (~40% of total)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Structure &amp; Mech</span>
+            <span class="sub-specs__value">0.96</span>
+            <span class="sub-specs__unit">kg (~12% of total)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total AOCS Mass</span>
+            <span class="sub-specs__value">0.82</span>
+            <span class="sub-specs__unit">kg (~10% of total)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Propulsion Mass</span>
+            <span class="sub-specs__value">0.90</span>
+            <span class="sub-specs__unit">kg (~11% of total)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total EPS &amp; Thermal</span>
+            <span class="sub-specs__value">1.67</span>
+            <span class="sub-specs__unit">kg (~20% of total)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Average Power Demand</span>
+            <span class="sub-specs__value">19.3</span>
+            <span class="sub-specs__unit">W (DRO average)</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Total Mission Delta-V</span>
+            <span class="sub-specs__value">271.1</span>
+            <span class="sub-specs__unit">m/s (worst case)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="se.arch_kicker">04 / CONOPS</p>
+          <h2 class="sub-section__title" data-i18n="se.arch_title">Concept of Operations</h2>
+          <p class="section-lede" data-i18n="se.arch_intro" style="margin-top: 1.2rem;">State machine diagram illustrating the nominal and contingency transitions of BIO-LUX[cite: 6].</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="System Operational Modes Diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <marker id="arr-mag" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#FF2EC2"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1.4; fill: none; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; fill: none; }
+                .wire-magenta { stroke: #FF2EC2; stroke-width: 1.4; fill: none; stroke-dasharray: 4 4; }
+              </style>
+            </defs>
+
+            <!-- Deployment -->
+            <rect class="b-fill" x="40" y="80" width="100" height="40"/>
+            <text class="b-label" x="90" y="105" text-anchor="middle">STAND-BY</text>
+
+            <path class="wire-cyan" d="M140 100 L 220 100" marker-end="url(#arr)"/>
+            
+            <rect class="b-fill-accent" x="220" y="80" width="100" height="40"/>
+            <text class="b-label" x="270" y="105" text-anchor="middle">DETUMBLE</text>
+
+            <path class="wire-cyan" d="M320 100 L 400 100" marker-end="url(#arr)"/>
+
+            <rect class="b-fill-accent" x="400" y="80" width="120" height="40"/>
+            <text class="b-label" x="460" y="105" text-anchor="middle">SUN POINTING</text>
+
+            <!-- Nominal Operations -->
+            <rect class="b-fill" x="650" y="80" width="120" height="40"/>
+            <text class="b-label" x="710" y="105" text-anchor="middle">NADIR POINTING</text>
+
+            <path class="wire" d="M520 90 L 650 90" marker-end="url(#arr)"/>
+            <path class="wire" d="M650 110 L 520 110" marker-end="url(#arr)"/>
+
+            <!-- Sub-modes -->
+            <rect class="b-fill" x="550" y="180" width="100" height="40"/>
+            <text class="b-label" x="600" y="205" text-anchor="middle">IMAGING</text>
+
+            <rect class="b-fill" x="680" y="180" width="100" height="40"/>
+            <text class="b-label" x="730" y="205" text-anchor="middle">DOWNLINK</text>
+
+            <path class="wire" d="M680 120 L 630 180" marker-end="url(#arr)"/>
+            <path class="wire" d="M740 120 L 740 180" marker-end="url(#arr)"/>
+
+            <!-- Orbit Control -->
+            <rect class="b-fill" x="400" y="240" width="120" height="40"/>
+            <text class="b-label" x="460" y="265" text-anchor="middle">ORBIT CONTROL</text>
+
+            <path class="wire" d="M460 120 L 460 240" marker-end="url(#arr)"/>
+            <path class="wire" d="M480 240 L 480 120" marker-end="url(#arr)"/>
+
+            <!-- Safe Mode -->
+            <rect class="b-fill-magenta" x="220" y="300" width="140" height="40"/>
+            <text class="b-label" x="290" y="325" text-anchor="middle" style="fill:#FF2EC2;">SAFE MODE</text>
+
+            <path class="wire-magenta" d="M460 280 L 360 320" marker-end="url(#arr-mag)"/>
+            <path class="wire-magenta" d="M650 120 L 360 300" marker-end="url(#arr-mag)"/>
+            <path class="wire-magenta" d="M420 120 L 330 300" marker-end="url(#arr-mag)"/>
+            <path class="wire-magenta" d="M270 120 L 270 300" marker-end="url(#arr-mag)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="se.comp_kicker">05 / FDIR LOGIC</p>
+          <h2 class="sub-section__title" data-i18n="se.comp_title">FDIR Architecture</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">L0</span>
+            <p class="component-card__tag">SILICON LAYER</p>
+            <h3 class="component-card__name">Hardware Level</h3>
+            <p class="component-card__desc">Mitigates RAM/eMMC errors using EDAC and TMR mechanisms. Responds in &lt;1 ms[cite: 6].</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">L1</span>
+            <p class="component-card__tag">TASK LAYER</p>
+            <h3 class="component-card__name">Software RTOS</h3>
+            <p class="component-card__desc">Handles execution overruns and missed deadlines using FreeRTOS hooks and schedule resets[cite: 6].</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">L2</span>
+            <p class="component-card__tag">SUBSYSTEM LAYER</p>
+            <h3 class="component-card__name">Hardware Node</h3>
+            <p class="component-card__desc">Monitors out-of-bounds parameters and undervoltage. Commands safe state or PCDU power cycles[cite: 6].</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">L3</span>
+            <p class="component-card__tag">SYSTEM LAYER</p>
+            <h3 class="component-card__name">Global Mode Manager</h3>
+            <p class="component-card__desc">Reacts to persistent L2 failures or critical attitude faults by forcing transitions to Safe Mode[cite: 6].</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">L4</span>
+            <p class="component-card__tag">GROUND LAYER</p>
+            <h3 class="component-card__name">Human-in-the-Loop</h3>
+            <p class="component-card__desc">Invoked when on-board recovery is exhausted. Operations Centre commands OBC reboots or software image fallbacks[cite: 6].</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="se.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="se.dec_title">System-Level Decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title">Design for 12 kg Hard Limit</h3>
+              <p class="decision__body">The 6U platform is structured to ensure that even under worst-case structural and payload configurations, the total wet mass (8.11 kg) preserves a robust margin against standard deployer mass limits (12 kg), increasing launch opportunity flexibility[cite: 6].</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title">Zero Debris Approach Compliance</h3>
+              <p class="decision__body">The mission implements a rigorous End-of-Life phase to satisfy ESA's Zero Debris policy. A dedicated deorbiting maneuver (utilizing electric propulsion) forces atmospheric re-entry within a 5-year timeline[cite: 6].</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

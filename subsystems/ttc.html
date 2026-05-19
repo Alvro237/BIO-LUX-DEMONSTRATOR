@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" data-meta-title-key="ttc.meta_title" data-meta-desc-key="ttc.meta_desc">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="ttc.meta_title">TT&amp;C · CD&amp;H // BIO-LUX</title>
+  <meta name="description" content="BIO-LUX Communications and Data Handling subsystem." />
+  <meta name="theme-color" content="#04040A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+      <a href="/" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="/img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="/#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="/#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="/subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="/subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="/subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="/subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="/subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="/subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="/#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="crumb container">
+      <nav class="crumb__trail" aria-label="Breadcrumb">
+        <a href="/" data-i18n="common.home">Home</a>
+        <span class="crumb__sep">/</span>
+        <a href="/#subsystems" data-i18n="common.subsystems">Subsystems</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__current">TT&amp;C · CD&amp;H</span>
+      </nav>
+    </section>
+
+    <section class="sub-hero">
+      <div class="container">
+        <div class="sub-hero__inner">
+          <div>
+            <p class="sub-hero__kicker" data-i18n="ttc.code">06 / TT&amp;C · CD&amp;H</p>
+            <h1 class="sub-hero__h1" data-i18n="ttc.title">Communications &amp; Data Handling</h1>
+            <p class="sub-hero__lede" data-i18n="ttc.lede">The radio link to the ground and the brain that runs the spacecraft.</p>
+          </div>
+          <aside class="sub-hero__owner">
+            <div class="sub-hero__owner-photo">
+              <img src="/img/team/manuel-cristobal-garcia.png" alt="Manuel Cristóbal García" />
+            </div>
+            <div>
+              <p class="sub-hero__owner-role" data-i18n="ttc.owner_role">TT&amp;C · CD&amp;H Lead</p>
+              <p class="sub-hero__owner-name" data-i18n="ttc.owner_name">Manuel Cristóbal García</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualizados los telemetría con los datos del reporte -->
+    <div class="telemetry" aria-hidden="true">
+      <div class="telemetry__track">
+        <span class="telemetry__item accent">TT&amp;C // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">UPLINK · UHF 437 MHZ</span>
+        <span class="telemetry__item">DOWNLINK · S-BAND 2.25 GHZ</span>
+        <span class="telemetry__item">TC RATE · 9.6 KBPS</span>
+        <span class="telemetry__item">TM RATE · 1.6 MBPS</span>
+        <span class="telemetry__item">PROTOCOL · CCSDS</span>
+        <span class="telemetry__item">OBC · ZYNQ ULTRASCALE+</span>
+        <span class="telemetry__item">EMMC · 2x 128 GB</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+        
+        <span class="telemetry__item accent">TT&amp;C // SUBSYSTEM DOSSIER</span>
+        <span class="telemetry__item">UPLINK · UHF 437 MHZ</span>
+        <span class="telemetry__item">DOWNLINK · S-BAND 2.25 GHZ</span>
+        <span class="telemetry__item">TC RATE · 9.6 KBPS</span>
+        <span class="telemetry__item">TM RATE · 1.6 MBPS</span>
+        <span class="telemetry__item">PROTOCOL · CCSDS</span>
+        <span class="telemetry__item">OBC · ZYNQ ULTRASCALE+</span>
+        <span class="telemetry__item">EMMC · 2x 128 GB</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+      </div>
+    </div>
+
+    <section class="sub-section sub-overview">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker">02 / <span data-i18n="common.overview">OVERVIEW</span></p>
+          <h2 class="sub-section__title" data-i18n="ttc.overview_lede">TT&amp;C handles the bidirectional radio link…</h2>
+        </div>
+
+        <div class="sub-overview__grid">
+          <div class="sub-overview__text">
+            <p data-i18n="ttc.overview_p1">In BIO-LUX the two responsibilities are consolidated…</p>
+            <p data-i18n="ttc.overview_p2">Within a sun-synchronous orbit at 671 km…</p>
+          </div>
+          <aside class="sub-overview__facts">
+            <div class="sub-overview__fact">
+              <span data-i18n="ttc.fact_pass_label">Ground passes</span>
+              <strong data-i18n="ttc.fact_pass_value">~7 / day (total)</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="ttc.fact_window_label">Avg. pass window</span>
+              <strong data-i18n="ttc.fact_window_value">~7.5 min</strong>
+            </div>
+            <div class="sub-overview__fact">
+              <span data-i18n="ttc.fact_volume_label">Daily data budget</span>
+              <strong data-i18n="ttc.fact_volume_value">1.1 GB (S-band cap.)</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualizada con las specs del diseño MISE -->
+    <section class="sub-section sub-specs">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="ttc.specs_kicker">03 / SPECIFICATIONS</p>
+          <h2 class="sub-section__title" data-i18n="ttc.specs_title">Key specifications</h2>
+        </div>
+
+        <div class="sub-specs__table">
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Uplink band</span>
+            <span class="sub-specs__value">UHF Amateur</span>
+            <span class="sub-specs__unit">437 MHz</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Downlink band</span>
+            <span class="sub-specs__value">S-Band</span>
+            <span class="sub-specs__unit">2.25 GHz</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Uplink data rate</span>
+            <span class="sub-specs__value">9.6</span>
+            <span class="sub-specs__unit">kbps</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Downlink data rate</span>
+            <span class="sub-specs__value">1.6</span>
+            <span class="sub-specs__unit">Mbps</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">TX RF power</span>
+            <span class="sub-specs__value">1.0</span>
+            <span class="sub-specs__unit">W</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">TC modulation</span>
+            <span class="sub-specs__value">GMSK</span>
+            <span class="sub-specs__unit">—</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">TM modulation</span>
+            <span class="sub-specs__value">OQPSK</span>
+            <span class="sub-specs__unit">CCSDS</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Framing protocol</span>
+            <span class="sub-specs__value">CCSDS</span>
+            <span class="sub-specs__unit">TM / TC</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Worst-case link margin</span>
+            <span class="sub-specs__value">&gt; 3</span>
+            <span class="sub-specs__unit">dB</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">OBC</span>
+            <span class="sub-specs__value">Xiphos Q8S</span>
+            <span class="sub-specs__unit">Zynq MPSoC</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Mass memory</span>
+            <span class="sub-specs__value">eMMC</span>
+            <span class="sub-specs__unit">2x 128 GB</span>
+          </div>
+          <div class="sub-specs__row">
+            <span class="sub-specs__param">Subsystem mass (alloc.)</span>
+            <span class="sub-specs__value">~0.44</span>
+            <span class="sub-specs__unit">kg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Esquema Vectorial Actualizado -->
+    <section class="sub-section sub-architecture">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="ttc.arch_kicker">04 / ARCHITECTURE</p>
+          <h2 class="sub-section__title" data-i18n="ttc.arch_title">Architecture</h2>
+          <p class="section-lede" data-i18n="ttc.arch_intro" style="margin-top: 1.2rem;">Top-level block diagram of the avionics chain…</p>
+        </div>
+
+        <div class="sub-architecture__frame">
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-bl" aria-hidden="true"></span>
+          <svg viewBox="0 0 900 460" role="img" aria-label="TT&amp;C and CD&amp;H block diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+                <path d="M0,1 L9,5 L0,9 z" fill="#00E5FF"/>
+              </marker>
+              <style>
+                .b-fill { fill: #0A0A12; stroke: rgba(155,155,168,0.36); }
+                .b-fill-accent { fill: #14141F; stroke: #00E5FF; }
+                .b-fill-magenta { fill: #14141F; stroke: #FF2EC2; }
+                .b-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #F0F0F5; letter-spacing: 0.08em; text-transform: uppercase; }
+                .b-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #9B9BA8; letter-spacing: 0.06em; }
+                .wire { stroke: rgba(155,155,168,0.5); stroke-width: 1; fill: none; }
+                .wire-cyan { stroke: #00E5FF; stroke-width: 1.4; fill: none; }
+                .wire-magenta { stroke: #FF2EC2; stroke-width: 1.4; fill: none; }
+              </style>
+            </defs>
+
+            <rect class="b-fill-magenta" x="20" y="190" width="130" height="80"/>
+            <text class="b-label" x="85" y="225" text-anchor="middle" data-i18n="ttc.arch_lbl_gs">GROUND STATION</text>
+            <text class="b-label-sm" x="85" y="245" text-anchor="middle">E-USOC / Leaf Space</text>
+
+            <rect class="b-fill" x="210" y="120" width="120" height="56"/>
+            <text class="b-label" x="270" y="153" text-anchor="middle" data-i18n="ttc.arch_lbl_uhf_a">UHF ANTENNA</text>
+            <rect class="b-fill" x="210" y="284" width="120" height="56"/>
+            <text class="b-label" x="270" y="317" text-anchor="middle" data-i18n="ttc.arch_lbl_s_a">S-BAND ANTENNA</text>
+
+            <rect class="b-fill-accent" x="380" y="120" width="140" height="56"/>
+            <text class="b-label" x="450" y="153" text-anchor="middle" data-i18n="ttc.arch_lbl_trx">AX100 UHF TRX</text>
+            <rect class="b-fill-accent" x="380" y="284" width="140" height="56"/>
+            <text class="b-label" x="450" y="317" text-anchor="middle" data-i18n="ttc.arch_lbl_stx">NANOLINK S-BAND</text>
+
+            <rect class="b-fill-accent" x="580" y="180" width="160" height="100"/>
+            <text class="b-label" x="660" y="222" text-anchor="middle" data-i18n="ttc.arch_lbl_obc">XIPHOS Q8S OBC</text>
+            <text class="b-label-sm" x="660" y="245" text-anchor="middle">Zynq UltraScale+ (AMP)</text>
+            <text class="b-label-sm" x="660" y="262" text-anchor="middle">FreeRTOS &amp; PetaLinux</text>
+
+            <rect class="b-fill" x="580" y="60" width="160" height="60"/>
+            <text class="b-label" x="660" y="84" text-anchor="middle" data-i18n="ttc.arch_lbl_mem">DUAL eMMC STORAGE</text>
+            <text class="b-label-sm" x="660" y="102" text-anchor="middle">2x 128 GB · Redundant</text>
+
+            <rect class="b-fill" x="580" y="340" width="160" height="56"/>
+            <text class="b-label" x="660" y="367" text-anchor="middle" data-i18n="ttc.arch_lbl_bus">PLATFORM BUS</text>
+            <text class="b-label-sm" x="660" y="384" text-anchor="middle">CAN + LVDS + I²C</text>
+
+            <rect class="b-fill" x="790" y="80" width="90" height="36"/>
+            <text class="b-label-sm" x="835" y="103" text-anchor="middle" data-i18n="ttc.arch_lbl_pl">PAYLOADS</text>
+            <rect class="b-fill" x="790" y="200" width="90" height="36"/>
+            <text class="b-label-sm" x="835" y="223" text-anchor="middle" data-i18n="ttc.arch_lbl_eps">EPS</text>
+            <rect class="b-fill" x="790" y="320" width="90" height="36"/>
+            <text class="b-label-sm" x="835" y="343" text-anchor="middle" data-i18n="ttc.arch_lbl_aocs">AOCS</text>
+
+            <path class="wire-magenta" d="M150 220 Q 180 200 210 148" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+            <path class="wire-cyan"    d="M210 312 Q 180 280 150 240" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+            <line class="wire" x1="330" y1="148" x2="380" y2="148" marker-end="url(#arr)"/>
+            <line class="wire" x1="330" y1="312" x2="380" y2="312" marker-end="url(#arr)"/>
+            <path class="wire" d="M520 148 Q 560 148 580 200" marker-end="url(#arr)"/>
+            <path class="wire" d="M520 312 Q 560 312 580 260" marker-end="url(#arr)"/>
+            <line class="wire" x1="660" y1="180" x2="660" y2="120" marker-end="url(#arr)"/>
+            <line class="wire" x1="640" y1="120" x2="640" y2="180" marker-end="url(#arr)"/>
+            <line class="wire" x1="660" y1="280" x2="660" y2="340" marker-end="url(#arr)"/>
+            <path class="wire" d="M740 360 Q 770 360 790 98"  marker-end="url(#arr)"/>
+            <path class="wire" d="M740 368 Q 770 368 790 218" marker-end="url(#arr)"/>
+            <path class="wire" d="M740 376 Q 770 376 790 338" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-components">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="ttc.comp_kicker">05 / COMPONENTS</p>
+          <h2 class="sub-section__title" data-i18n="ttc.comp_title">Components</h2>
+        </div>
+
+        <div class="sub-components__grid">
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">01</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_1_tag">RADIO · UPLINK</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_1_name">UHF Transceiver</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_1_desc">Half-duplex UHF transceiver…</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">02</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_2_tag">RADIO · DOWNLINK</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_2_name">S-band Transmitter</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_2_desc">High-rate S-band transmitter…</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">03</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_3_tag">RF · UHF</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_3_name">Deployable Dipole Antenna</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_3_desc">Omnidirectional UHF dipole…</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">04</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_4_tag">RF · S-BAND</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_4_name">S-band Patch Antenna</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_4_desc">Body-mounted patch antenna…</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">05</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_5_tag">COMPUTE · OBC</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_5_name">On-Board Computer</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_5_desc">Radiation-tolerant ARM Cortex-M7 OBC…</p>
+          </article>
+          <article class="component-card">
+            <span class="component-card__index" aria-hidden="true">06</span>
+            <p class="component-card__tag" data-i18n="ttc.comp_6_tag">STORAGE</p>
+            <h3 class="component-card__name" data-i18n="ttc.comp_6_name">NAND Mass Memory</h3>
+            <p class="component-card__desc" data-i18n="ttc.comp_6_desc">4 GB radiation-tolerant NAND…</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-decisions">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="ttc.dec_kicker">06 / DESIGN DECISIONS</p>
+          <h2 class="sub-section__title" data-i18n="ttc.dec_title">Design decisions</h2>
+        </div>
+
+        <div class="sub-decisions__list">
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="ttc.dec_1_title">UHF for TC, S-band for TM</h3>
+              <p class="decision__body" data-i18n="ttc.dec_1_body">Telecommand traffic is small…</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="ttc.dec_2_title">CCSDS over AX.25</h3>
+              <p class="decision__body" data-i18n="ttc.dec_2_body">AX.25 is convenient for amateur ground stations…</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="ttc.dec_3_title">Integrated TT&amp;C + CD&amp;H board</h3>
+              <p class="decision__body" data-i18n="ttc.dec_3_body">Mass, harness and bus arbitration…</p>
+            </div>
+          </article>
+          <article class="decision">
+            <span class="decision__index" aria-hidden="true"></span>
+            <div>
+              <h3 class="decision__title" data-i18n="ttc.dec_4_title">Hardware safe-mode beacon</h3>
+              <p class="decision__body" data-i18n="ttc.dec_4_body">If the OBC fails…</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section sub-standards">
+      <div class="container">
+        <div class="sub-section__head">
+          <p class="sub-section__kicker" data-i18n="ttc.std_kicker">07 / STANDARDS</p>
+          <h2 class="sub-section__title" data-i18n="ttc.std_title">Standards &amp; references</h2>
+          <p class="section-lede" data-i18n="ttc.std_intro" style="margin-top: 1.2rem;">The TT&amp;C/CD&amp;H design is aligned with…</p>
+        </div>
+
+        <div class="sub-standards__list">
+          <span class="standard-chip">CCSDS 131.0-B</span>
+          <span class="standard-chip">CCSDS 232.0-B</span>
+          <span class="standard-chip">CCSDS 133.0-B</span>
+          <span class="standard-chip">ECSS-E-ST-50-05C Rev.2</span>
+          <span class="standard-chip">ECSS-E-ST-70-41C</span>
+          <span class="standard-chip">ITU-R Recs.</span>
+          <span class="standard-chip">IARU Sat Coordination</span>
+          <span class="standard-chip">CAN 2.0B</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="sub-pager">
+        <a class="sub-pager__cell sub-pager__cell--prev" href="/subsystems/eps-thermal.html">
+          <span class="sub-pager__label" data-i18n="common.previous">Previous</span>
+          <span class="sub-pager__name">EPS / Thermal</span>
+        </a>
+        <a class="sub-pager__cell sub-pager__cell--next" href="/subsystems/payload.html">
+          <span class="sub-pager__label" data-i18n="common.next">Next</span>
+          <span class="sub-pager__name">Payload</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="/img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">Designed and built at Universidad Carlos III de Madrid.</p>
+        </div>
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="/img/logos/mise.png" alt="MISE — Master in Space Engineering" />
+            <img src="/img/logos/uc3m.png" alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="/img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

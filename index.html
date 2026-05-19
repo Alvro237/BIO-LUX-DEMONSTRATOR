@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">BIO-LUX // 6U CubeSat Demonstrator Mission</title>
+  <meta name="description" content="BIO-LUX is a 6U CubeSat demonstrator mission designed by the MISE programme at Universidad Carlos III de Madrid." />
+  <meta name="theme-color" content="#04040A" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon (uses team patch) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logos/biolux-favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/logos/biolux-favicon-180.png" />
+</head>
+<body>
+
+  <!-- Starfield backdrop -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner container">
+
+      <a href="#top" class="nav__brand" aria-label="BIO-LUX home">
+        <img src="img/logos/biolux.png" alt="" />
+        <span>BIO<span class="dot">·</span>LUX</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#problem"     data-i18n="nav.mission">Mission</a>
+        <a class="nav__link" href="#spacecraft"  data-i18n="nav.spacecraft">Spacecraft</a>
+        <a class="nav__link" href="subsystems/payload.html"     data-i18n="nav.payload">Payload</a>
+        <a class="nav__link" href="subsystems/propulsion.html"  data-i18n="nav.propulsion">Propulsion</a>
+        <a class="nav__link" href="subsystems/structures.html"   data-i18n="nav.structure">Structure</a>
+        <a class="nav__link" href="subsystems/aocs.html"        data-i18n="nav.aocs">AOCS</a>
+        <a class="nav__link" href="subsystems/eps-thermal.html" data-i18n="nav.eps_th">Power &amp; Thermal</a>
+        <a class="nav__link" href="subsystems/ttc.html"         data-i18n="nav.ttc">TT&amp;C</a>
+        <a class="nav__link" href="#team"        data-i18n="nav.team">Team</a>
+      </nav>
+
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch language">
+        <span data-lang-label>ES</span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+      <span class="hero__corner tl" aria-hidden="true"></span>
+      <span class="hero__corner tr" aria-hidden="true"></span>
+      <span class="hero__corner bl" aria-hidden="true"></span>
+      <span class="hero__corner br" aria-hidden="true"></span>
+
+      <div class="container">
+        <p class="hero__tag" data-i18n="hero.tag">MISE · UC3M · MISSION DOSSIER 2026</p>
+
+        <h1 class="hero__h1">
+          <span class="l1" data-i18n="hero.h1_line1">BIO-LUX</span>
+          <span class="l2" data-i18n="hero.h1_line2">A 6U CubeSat.</span>
+          <span class="l3">
+            <span data-i18n="hero.h1_line3_pre">The future</span>
+            <span class="hero__h1-accent" data-i18n="hero.h1_line3_accent">brighter</span>
+            <span data-i18n="hero.h1_line3_post">than ever.</span>
+          </span>
+        </h1>
+
+        <p class="hero__lede" data-i18n="hero.lede">
+          Four independent payloads. One demonstrator bus. Three years of operations at 671 kilometres above Earth.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#problem" class="btn btn--primary">
+            <span data-i18n="hero.cta_primary">Explore the Mission</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#team" class="btn btn--ghost">
+            <span data-i18n="hero.cta_secondary">Meet the Team</span>
+            <span class="btn__arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span data-i18n="hero.scroll_hint">SCROLL</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TELEMETRY MARQUEE
+         ============================================================ -->
+    <div class="telemetry" aria-hidden="true">
+      <div class="telemetry__track">
+        <span class="telemetry__item accent">BIO-LUX // TELEMETRY</span>
+        <span class="telemetry__item">ORBIT · 671 KM SSO</span>
+        <span class="telemetry__item">FORM FACTOR · 6U</span>
+        <span class="telemetry__item">DRY MASS · 8.113 KG</span>
+        <span class="telemetry__item">MASS LIMIT · 12.000 KG</span>
+        <span class="telemetry__item">PROPULSION · ENPULSION NANO R3</span>
+        <span class="telemetry__item">PAYLOADS · 4</span>
+        <span class="telemetry__item">DESIGN LIFE · 3 YR</span>
+        <span class="telemetry__item">CREW · 7 PAX</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+        <!-- duplicated for seamless infinite scroll -->
+        <span class="telemetry__item accent">BIO-LUX // TELEMETRY</span>
+        <span class="telemetry__item">ORBIT · 671 KM SSO</span>
+        <span class="telemetry__item">FORM FACTOR · 6U</span>
+        <span class="telemetry__item">DRY MASS · 8.113 KG</span>
+        <span class="telemetry__item">MASS LIMIT · 12.000 KG</span>
+        <span class="telemetry__item">PROPULSION · ENPULSION NANO R3</span>
+        <span class="telemetry__item">PAYLOADS · 4</span>
+        <span class="telemetry__item">DESIGN LIFE · 3 YR</span>
+        <span class="telemetry__item">CREW · 7 PAX</span>
+        <span class="telemetry__item accent">STATUS · DESIGN PHASE</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PROBLEM
+         ============================================================ -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <p class="kicker" data-i18n="problem.kicker">01 / THE PROBLEM</p>
+        <h2 class="section-title" data-i18n="problem.title">
+          Smallsats are the new platform. Most of them are still single-purpose.
+        </h2>
+
+        <div class="problem__grid">
+          <div></div>
+          <div class="problem__text">
+            <p data-i18n="problem.p1">Earth observation, biology, photonics and IoT each demand a dedicated mission…</p>
+            <p data-i18n="problem.p2">BIO-LUX is built on a single premise…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOLUTION
+         ============================================================ -->
+    <section class="solution" id="solution">
+      <div class="container">
+        <p class="kicker" data-i18n="solution.kicker">02 / THE SOLUTION</p>
+        <h2 class="section-title" data-i18n="solution.title">One bus. Four demonstrators. One orbit.</h2>
+
+        <div class="solution__intro">
+          <div></div>
+          <p data-i18n="solution.intro">
+            BIO-LUX consolidates four payloads inside a 6-unit CubeSat bus…
+          </p>
+        </div>
+
+        <div class="solution__payloads">
+          <article class="payload">
+            <p class="payload__label" data-i18n="solution.pl1_label">PAYLOAD A</p>
+            <span class="payload__index" aria-hidden="true">01</span>
+            <h3 class="payload__name" data-i18n="solution.pl1_name">Light Pollution EO</h3>
+            <p class="payload__desc" data-i18n="solution.pl1_desc">Nighttime radiometric Earth observation…</p>
+          </article>
+          <article class="payload">
+            <p class="payload__label" data-i18n="solution.pl2_label">PAYLOAD B</p>
+            <span class="payload__index" aria-hidden="true">02</span>
+            <h3 class="payload__name" data-i18n="solution.pl2_name">Biological</h3>
+            <p class="payload__desc" data-i18n="solution.pl2_desc">In-orbit biological experiment…</p>
+          </article>
+          <article class="payload">
+            <p class="payload__label" data-i18n="solution.pl3_label">PAYLOAD C</p>
+            <span class="payload__index" aria-hidden="true">03</span>
+            <h3 class="payload__name" data-i18n="solution.pl3_name">VEM Passive</h3>
+            <p class="payload__desc" data-i18n="solution.pl3_desc">Variable-emissivity material demonstrator…</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPACECRAFT REVEAL (Three.js)
+         ============================================================ -->
+    <section class="spacecraft" id="spacecraft">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="spacecraft__head">
+          <p class="kicker" data-i18n="spacecraft.kicker">03 / THE SPACECRAFT</p>
+          <h2 class="section-title" data-i18n="spacecraft.title">Engineered down to the last gram.</h2>
+          <p class="section-lede" data-i18n="spacecraft.lede">12 kg envelope. 8.113 kg in the current configuration…</p>
+        </div>
+
+        <div class="spacecraft__stage">
+          <div class="spacecraft__viewport" id="cubesat-viewport" role="img" aria-label="3D model of BIO-LUX CubeSat">
+            <div class="spacecraft__viewport-hint">
+              <span data-i18n="spacecraft.drag_hint">DRAG TO ROTATE</span>
+            </div>
+          </div>
+
+          <div class="spacecraft__specs">
+            <div class="spec">
+              <span class="spec__label" data-i18n="spacecraft.spec_dimensions_label">FORM FACTOR</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_dimensions_value">6U CubeSat</span>
+            </div>
+            <div class="spec spec--accent">
+              <span class="spec__label" data-i18n="spacecraft.spec_mass_label">CURRENT MASS</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_mass_value">8.113 kg</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label" data-i18n="spacecraft.spec_mass_limit_label">MASS LIMIT</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_mass_limit_value">12.000 kg</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label" data-i18n="spacecraft.spec_propulsion_label">PROPULSION</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_propulsion_value">Enpulsion Nano R3</span>
+            </div>
+            <div class="spec spec--accent">
+              <span class="spec__label" data-i18n="spacecraft.spec_orbit_label">ORBIT</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_orbit_value">671 km SSO</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label" data-i18n="spacecraft.spec_lifetime_label">DESIGN LIFE</span>
+              <span class="spec__value" data-i18n="spacecraft.spec_lifetime_value">3 years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION PHASES TIMELINE
+         ============================================================ -->
+    <section class="phases" id="phases">
+      <div class="container">
+        <p class="kicker" data-i18n="phases.kicker">04 / MISSION PHASES</p>
+        <h2 class="section-title" data-i18n="phases.title">From integration to controlled re-entry.</h2>
+
+        <div class="phases__rail">
+          <article class="phase">
+            <p class="phase__label" data-i18n="phases.p1_label">PHASE 1</p>
+            <h3 class="phase__name"  data-i18n="phases.p1_name">LEOP</h3>
+            <p class="phase__desc"   data-i18n="phases.p1_desc">Launch and Early Operations…</p>
+          </article>
+          <article class="phase">
+            <p class="phase__label" data-i18n="phases.p2_label">PHASE 2</p>
+            <h3 class="phase__name"  data-i18n="phases.p2_name">COMMISSIONING</h3>
+            <p class="phase__desc"   data-i18n="phases.p2_desc">Subsystem checkout…</p>
+          </article>
+          <article class="phase">
+            <p class="phase__label" data-i18n="phases.p3_label">PHASE 3</p>
+            <h3 class="phase__name"  data-i18n="phases.p3_name">NOMINAL OPS</h3>
+            <p class="phase__desc"   data-i18n="phases.p3_desc">Operational orbit at 671 km SSO…</p>
+          </article>
+          <article class="phase">
+            <p class="phase__label" data-i18n="phases.p4_label">PHASE 4</p>
+            <h3 class="phase__name"  data-i18n="phases.p4_name">EXTENDED OPS</h3>
+            <p class="phase__desc"   data-i18n="phases.p4_desc">If margins allow…</p>
+          </article>
+          <article class="phase">
+            <p class="phase__label" data-i18n="phases.p5_label">PHASE 5</p>
+            <h3 class="phase__name"  data-i18n="phases.p5_name">DEORBIT</h3>
+            <p class="phase__desc"   data-i18n="phases.p5_desc">Controlled lifetime termination…</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         KEY NUMBERS
+         ============================================================ -->
+    <section class="numbers" id="numbers">
+      <div class="container">
+        <p class="kicker" data-i18n="numbers.kicker">05 / KEY NUMBERS</p>
+
+        <div class="numbers__grid">
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n1_value">6</span><span class="number__unit" data-i18n="numbers.n1_unit">U</span></div>
+            <p class="number__label" data-i18n="numbers.n1_label">CubeSat form factor</p>
+          </div>
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n2_value">671</span><span class="number__unit" data-i18n="numbers.n2_unit">km</span></div>
+            <p class="number__label" data-i18n="numbers.n2_label">Sun-Synchronous Orbit</p>
+          </div>
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n3_value">4</span><span class="number__unit" data-i18n="numbers.n3_unit">PL</span></div>
+            <p class="number__label" data-i18n="numbers.n3_label">Independent payloads</p>
+          </div>
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n4_value">8.113</span><span class="number__unit" data-i18n="numbers.n4_unit">kg</span></div>
+            <p class="number__label" data-i18n="numbers.n4_label">Current dry mass</p>
+          </div>
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n5_value">3</span><span class="number__unit" data-i18n="numbers.n5_unit">yr</span></div>
+            <p class="number__label" data-i18n="numbers.n5_label">Design lifetime</p>
+          </div>
+          <div class="number">
+            <div><span class="number__value" data-i18n="numbers.n6_value">7</span><span class="number__unit" data-i18n="numbers.n6_unit">PAX</span></div>
+            <p class="number__label" data-i18n="numbers.n6_label">Engineering team</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SUBSYSTEMS GRID
+         ============================================================ -->
+    <section class="subsystems" id="subsystems">
+      <div class="container">
+        <p class="kicker" data-i18n="subsystems.kicker">06 / SUBSYSTEMS</p>
+        <h2 class="section-title" data-i18n="subsystems.title">Seven engineers. Seven disciplines.</h2>
+        <p class="section-lede"  data-i18n="subsystems.lede">Each subsystem has a dedicated lead inside the MISE programme.</p>
+
+        <div class="subsys__grid">
+          <a class="subsys" href="subsystems/payload.html">
+            <p class="subsys__code" data-i18n="subsystems.s_pl_code">PL</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_pl_name">Payload</h3>
+            <p class="subsys__owner">Santiago Orta</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/propulsion.html">
+            <p class="subsys__code" data-i18n="subsystems.s_ma_code">MA / PROP</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_ma_name">Mission Analysis &amp; Propulsion</h3>
+            <p class="subsys__owner">Alejandro Espinosa</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/structures.html">
+            <p class="subsys__code" data-i18n="subsystems.s_str_code">STR</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_str_name">Structure</h3>
+            <p class="subsys__owner">Guillermo Toledo</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/aocs.html">
+            <p class="subsys__code" data-i18n="subsystems.s_aocs_code">AOCS</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_aocs_name">Attitude &amp; Orbit Control</h3>
+            <p class="subsys__owner">Sergio Hernández</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/eps-thermal.html">
+            <p class="subsys__code" data-i18n="subsystems.s_eps_code">EPS / TH</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_eps_name">Power &amp; Thermal</h3>
+            <p class="subsys__owner">Álvaro Casillas</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/ttc.html">
+            <p class="subsys__code" data-i18n="subsystems.s_ttc_code">TT&amp;C</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_ttc_name">Communications &amp; Data Handling</h3>
+            <p class="subsys__owner">Manuel Cristóbal García</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+          <a class="subsys" href="subsystems/systems-engineering.html">
+            <p class="subsys__code" data-i18n="subsystems.s_se_code">SE</p>
+            <h3 class="subsys__name" data-i18n="subsystems.s_se_name">Systems Engineering</h3>
+            <p class="subsys__owner">Víctor Salas</p>
+            <span class="subsys__link" data-i18n="subsystems.explore">Open dossier</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TEAM PREVIEW
+         ============================================================ -->
+    <section class="team" id="team">
+      <div class="container">
+        <p class="kicker" data-i18n="team.kicker">07 / THE TEAM</p>
+        <h2 class="section-title" data-i18n="team.title">Seven names behind BIO-LUX.</h2>
+        <p class="section-lede"  data-i18n="team.lede">The BIO-LUX engineering team is part of the Master in Space Engineering at Universidad Carlos III de Madrid.</p>
+
+        <div class="team__grid">
+
+          <a class="member member--link" href="https://www.linkedin.com/in/salasgomez/" target="_blank" rel="noopener noreferrer" aria-label="Víctor Salas on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/victor-salas.png" alt="Víctor Salas" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">PM / SE</p>
+              <h3 class="member__name">Víctor Salas</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/santiago-orta-blanco-048648291/" target="_blank" rel="noopener noreferrer" aria-label="Santiago Orta on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/santiago-orta.png" alt="Santiago Orta" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">PAYLOAD</p>
+              <h3 class="member__name">Santiago Orta</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/alejandro-espinosa-cano-460727296/" target="_blank" rel="noopener noreferrer" aria-label="Alejandro Espinosa on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/alejandro-espinosa.png" alt="Alejandro Espinosa" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">MA / PROP</p>
+              <h3 class="member__name">Alejandro Espinosa</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/guillermotoledoa/" target="_blank" rel="noopener noreferrer" aria-label="Guillermo Toledo on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/guillermo-toledo.png" alt="Guillermo Toledo" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">STRUCTURE</p>
+              <h3 class="member__name">Guillermo Toledo</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/sergio-hern%C3%A1ndez-g%C3%B3mez-338093226/" target="_blank" rel="noopener noreferrer" aria-label="Sergio Hernández on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/sergio-hernandez.png" alt="Sergio Hernández" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">AOCS</p>
+              <h3 class="member__name">Sergio Hernández</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/%C3%A1lvaro-casillas-arias-068a71230/" target="_blank" rel="noopener noreferrer" aria-label="Álvaro Casillas on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/alvaro-casillas.png" alt="Álvaro Casillas" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">EPS / TH</p>
+              <h3 class="member__name">Álvaro Casillas</h3>
+            </div>
+          </a>
+
+          <a class="member member--link" href="https://www.linkedin.com/in/manuel-crist%C3%B3bal-garc%C3%ADa-garc%C3%ADa-32005421a/" target="_blank" rel="noopener noreferrer" aria-label="Manuel Cristóbal García on LinkedIn">
+            <div class="member__photo">
+              <img src="img/team/manuel-cristobal-garcia.png" alt="Manuel Cristóbal García" loading="lazy" />
+              <span class="member__linkedin" aria-hidden="true">in</span>
+            </div>
+            <div class="member__body">
+              <p class="member__role">TT&amp;C</p>
+              <h3 class="member__name">Manuel Cristóbal García</h3>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION REPORT
+         ============================================================ -->
+    <section class="report" id="report">
+      <div class="container">
+        <p class="kicker" data-i18n="report.kicker">08 / MISSION REPORT</p>
+        <h2 class="section-title" data-i18n="report.title">The full BIO-LUX mission dossier.</h2>
+        <p class="section-lede"  data-i18n="report.lede">Complete technical report covering all seven subsystems, mission analysis, design decisions and budget allocations.</p>
+
+        <div class="report__cta-wrap">
+          <a class="report__cta" href="docs/biolux-mission-report.pdf" download>
+            <span class="report__cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+                <path d="M12 4v12" />
+                <path d="M6 12l6 6 6-6" />
+                <path d="M5 20h14" />
+              </svg>
+            </span>
+            <span class="report__cta-text">
+              <span class="report__cta-label" data-i18n="report.cta_label">Download the report</span>
+              <span class="report__cta-meta"  data-i18n="report.format">PDF · 26 MB</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="img/logos/biolux.png" alt="" />
+            <span>BIO<span style="color:var(--accent-cyan)">·</span>LUX</span>
+          </div>
+          <p class="footer__tagline" data-i18n="footer.tagline">
+            Designed and built at Universidad Carlos III de Madrid.
+          </p>
+        </div>
+
+        <div class="footer__institutions">
+          <div class="footer__inst-row">
+            <img src="img/logos/mise.png"     alt="MISE — Master in Space Engineering" />
+            <img src="img/logos/uc3m.png"     alt="Universidad Carlos III de Madrid" />
+            <img class="uc3m-seal" src="img/logos/uc3m-seal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="footer__inst-meta">
+            <div data-i18n="footer.programme">Master in Space Engineering</div>
+            <div data-i18n="footer.campus">Campus de Leganés · Madrid · Spain</div>
+            <div data-i18n="footer.year">Academic year 2025 — 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span data-i18n="footer.rights">BIO-LUX Team · All rights reserved.</span>
+        <span data-i18n="footer.credit">Site by the BIO-LUX Communications Office.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js as ES module via import map (enables GLTFLoader + Draco) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- App -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -496,7 +496,7 @@
       "kicker": "08 / MISSION REPORT",
       "title": "The full BIO-LUX mission dossier.",
       "lede": "Complete technical report covering all seven subsystems, mission analysis, design decisions and budget allocations.",
-      "cta_label": "Download the report",
+      "cta_label": "request the report",
       "format": "PDF · 26 MB"
     }
   },
@@ -997,7 +997,7 @@
       "kicker": "08 / INFORME DE MISIÓN",
       "title": "El dossier completo de la misión BIO-LUX.",
       "lede": "Informe técnico completo que cubre los siete subsistemas, el análisis de misión, las decisiones de diseño y la asignación de presupuestos.",
-      "cta_label": "Descargar el informe",
+      "cta_label": "Solicitar el informe",
       "format": "PDF · 26 MB"
     }
   }

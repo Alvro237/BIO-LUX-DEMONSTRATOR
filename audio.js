@@ -6,7 +6,7 @@
    (mark <body data-audio-autoplay> to opt in).
    ============================================================ */
 
-const AUDIO_SRC = 'docs/Soundtrack.mp4';
+const AUDIO_SRC = 'BIO-LUX-DEMONSTRATOR/docs/Soundtrack.mp4';
 const STORE_KEY = 'biolux_audio';
 const CHANNEL   = 'biolux_audio_bc';
 

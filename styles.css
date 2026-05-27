@@ -1662,3 +1662,67 @@ html.js .report__cta-wrap {
   transform: scaleX(1);
   background: var(--accent-cyan);
 }
+
+/* ============================================================
+   AUDIO PLAYER
+   ============================================================ */
+#audio-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    border-color 220ms var(--ease-out),
+    color        220ms var(--ease-out),
+    box-shadow   220ms var(--ease-out),
+    background   220ms var(--ease-out);
+}
+
+#audio-toggle:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background: var(--bg-elevated);
+}
+
+#audio-toggle.is-playing {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.2);
+}
+
+/* Icon visibility */
+#audio-toggle .audio-icon--on  { display: none; }
+#audio-toggle.is-playing .audio-icon--off { display: none; }
+#audio-toggle.is-playing .audio-icon--on  { display: flex; }
+
+/* Subtle pulse on the icon when playing */
+@keyframes audio-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+#audio-toggle.is-playing .audio-icon--on {
+  animation: audio-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #audio-toggle.is-playing .audio-icon--on { animation: none; }
+}
+
+/* Hide label on very small screens */
+@media (max-width: 480px) {
+  #audio-toggle .audio-label { display: none; }
+}

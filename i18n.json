@@ -79,21 +79,18 @@
     "phases": {
       "kicker": "04 / MISSION PHASES",
       "title": "From integration to controlled re-entry.",
-      "p1_label": "PHASE 1",
+      "p1_label": "PHASE 1 [6 MONTHS]",
       "p1_name": "LEOP",
       "p1_desc": "Launch and Early Operations. Separation, detumbling, first contact with the ground segment.",
-      "p2_label": "PHASE 2",
+      "p2_label": "PHASE 2 [6 WEEKS]",
       "p2_name": "COMMISSIONING",
       "p2_desc": "Subsystem checkout, payload self-test, attitude calibration, propulsion warm-up.",
-      "p3_label": "PHASE 3",
+      "p3_label": "PHASE 3 [3 YEARS]",
       "p3_name": "NOMINAL OPS",
       "p3_desc": "Operational orbit between 500 and 700 km SSO. Payload duty cycles run continuously for 3 years.",
-      "p4_label": "PHASE 4",
-      "p4_name": "EXTENDED OPS",
-      "p4_desc": "If margins allow, extended science campaigns and technology demonstrations beyond baseline.",
-      "p5_label": "PHASE 5",
-      "p5_name": "DEORBIT",
-      "p5_desc": "Controlled lifetime termination compliant with space-debris mitigation guidelines."
+      "p4_label": "PHASE 4 [1 YEAR]",
+      "p4_name": "DEORBIT",
+      "p4_desc": "Controlled lifetime termination compliant with space-debris mitigation guidelines."
     },
     "numbers": {
       "kicker": "05 / KEY NUMBERS",

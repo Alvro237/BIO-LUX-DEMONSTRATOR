@@ -6,7 +6,7 @@
    (mark <body data-audio-autoplay> to opt in).
    ============================================================ */
 
-const AUDIO_SRC = 'docs/Soundtrack.mp4';
+const AUDIO_SRC = '/docs/Soundtrack.mp4';
 const STORE_KEY = 'biolux_audio';
 const CHANNEL   = 'biolux_audio_bc';
 
@@ -18,7 +18,7 @@ function mount() {
   audio.id        = 'bg-audio';
   audio.loop      = true;
   audio.preload   = 'auto';
-  audio.innerHTML = '<source src="docs/Soundtrack.mp4" type="audio/mp4">';
+  audio.innerHTML = `<source src="${AUDIO_SRC}" type="audio/mp4">`;
   document.body.appendChild(audio);
 
   const btn = document.createElement('button');
@@ -51,7 +51,7 @@ function mount() {
 }
 
 /* ---------------------------------------------------------- */
-/* Persist state to localStorage                              */
+/* Persist state                                              */
 /* ---------------------------------------------------------- */
 function save(audio, playing) {
   try {
@@ -80,6 +80,9 @@ function setUI(btn, playing) {
 /* Main init                                                  */
 /* ---------------------------------------------------------- */
 function init() {
+  // Guard against double-init (e.g. hot-reload scenarios)
+  if (document.getElementById('bg-audio')) return;
+
   const { audio, btn } = mount();
 
   const bc = typeof BroadcastChannel !== 'undefined'
@@ -113,20 +116,19 @@ function init() {
         if (bc) bc.postMessage('playing');
       })
       .catch(() => {
-        // Browser blocked autoplay — user hasn't interacted yet
+        // Browser blocked — autoplay policy not yet satisfied
       });
   }
 
   // ---- Restore previous session ---------------------------
   if (saved.playing) play();
 
-  // ---- First-interaction autoplay (index.html only) -------
-  // Scroll is intentionally kept to allow cleanup but returns
-  // early because it is NOT a browser-recognised activation
-  // gesture for autoplay (Chrome/Firefox/Safari all block it).
-  const isAutoplayPage = document.body.hasAttribute('data-audio-autoplay');
-
+  // ---- First-interaction listeners (index.html only) ------
+  // Defined outside the if-block so removeFirstInteractionListeners
+  // is always in scope for the button handler below.
   function onFirstInteraction(e) {
+    // scroll is NOT a browser-recognised activation gesture
+    // for autoplay — Chrome/Firefox/Safari all block it.
     if (e.type === 'scroll') return;
     if (audio.paused) play();
     removeFirstInteractionListeners();
@@ -139,6 +141,8 @@ function init() {
     document.removeEventListener('scroll',       onFirstInteraction, { passive: true });
   }
 
+  const isAutoplayPage = document.body.hasAttribute('data-audio-autoplay');
+
   if (isAutoplayPage) {
     document.addEventListener('click',       onFirstInteraction);
     document.addEventListener('keydown',     onFirstInteraction);
@@ -146,13 +150,12 @@ function init() {
     document.addEventListener('scroll',      onFirstInteraction, { passive: true });
   }
 
-  // ---- Manual toggle --------------------------------------
+  // ---- Manual toggle button -------------------------------
+  // stopPropagation prevents the document-level onFirstInteraction
+  // from also firing, so we must clean up and call play() here.
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    // Always clean up first-interaction listeners when the
-    // button is clicked so they don't linger if the button
-    // was the very first element the user interacted with.
-    removeFirstInteractionListeners();
+    removeFirstInteractionListeners(); // always clean up
 
     if (audio.paused) {
       play();
@@ -168,4 +171,11 @@ function init() {
   window.addEventListener('pagehide', () => save(audio, !audio.paused));
 }
 
-document.addEventListener('DOMContentLoaded', init);
+/* ---------------------------------------------------------- */
+/* Boot — handles both normal load and cached-script edge case */
+/* ---------------------------------------------------------- */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

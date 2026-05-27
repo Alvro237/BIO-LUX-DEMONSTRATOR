@@ -6,7 +6,7 @@
    (mark <body data-audio-autoplay> to opt in).
    ============================================================ */
 
-const AUDIO_SRC = 'BIO-LUX-DEMONSTRATOR/docs/Soundtrack.mp4';
+const AUDIO_SRC = 'docs/Soundtrack.mp4';
 const STORE_KEY = 'biolux_audio';
 const CHANNEL   = 'biolux_audio_bc';
 
@@ -18,7 +18,7 @@ function mount() {
   audio.id        = 'bg-audio';
   audio.loop      = true;
   audio.preload   = 'auto';
-  audio.innerHTML = `<source src="${AUDIO_SRC}" type="audio/mp4">`;
+  audio.innerHTML = '<source src="docs/Soundtrack.mp4" type="audio/mp4">';
   document.body.appendChild(audio);
 
   const btn = document.createElement('button');

@@ -812,6 +812,21 @@ function initScrollTriggers(cubesatApi) {
     .to(".report .section-lede",  { opacity: 1, y: 0, duration: 0.8 }, 0.35)
     .to(".report__cta-wrap",      { opacity: 1, y: 0, duration: 0.9 }, 0.55);
 
+  /* ---------- ACKNOWLEDGEMENTS ---------- */
+  const tlThanks = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".thanks",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    defaults: { ease: "power3.out" },
+  });
+  tlThanks
+    .to(".thanks .kicker",        { opacity: 1, y: 0, duration: 0.7 }, 0)
+    .to(".thanks .section-title", { opacity: 1, y: 0, duration: 0.9 }, 0.1)
+    .to(".thanks .section-lede",  { opacity: 1, y: 0, duration: 0.8 }, 0.35)
+    .to(".thanks__group",         { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.5);
+
   /* ---------- FOOTER ---------- */
   gsap.to(".footer__top", {
     opacity: 1, y: 0, duration: 0.9,

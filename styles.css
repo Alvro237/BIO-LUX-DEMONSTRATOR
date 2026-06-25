@@ -253,7 +253,8 @@ section + section { border-top: 1px solid var(--line); }
   margin-top: 2.4rem;
   font-size: clamp(1.05rem, 1.4vw, 1.35rem);
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  text-shadow: 0 1px 14px rgba(4, 4, 10, 0.7);
   max-width: 56ch;
 }
 .hero__ctas {
@@ -469,7 +470,7 @@ section + section { border-top: 1px solid var(--line); }
 .phases__rail {
   margin-top: 5rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   position: relative;
 }
@@ -1725,4 +1726,95 @@ html.js .report__cta-wrap {
 /* Hide label on very small screens */
 @media (max-width: 480px) {
   #audio-toggle .audio-label { display: none; }
+}
+/* ============================================================
+   ACKNOWLEDGEMENTS (thanks)
+   ============================================================ */
+.thanks {
+  position: relative;
+  padding: clamp(80px, 10vw, 140px) 0;
+  border-top: 1px solid var(--line);
+}
+.thanks .section-lede { max-width: 60ch; }
+
+.thanks__grid {
+  margin-top: clamp(40px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(32px, 4vw, 56px);
+}
+.thanks__group {
+  padding-left: 20px;
+  border-left: 1px solid var(--line-strong);
+}
+.thanks__group-title {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 1.6rem;
+}
+.thanks__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.thanks__person { display: flex; flex-direction: column; gap: 0.3rem; }
+.thanks__name {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.05;
+  color: var(--text-primary);
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+  transition: color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+}
+.thanks__name:hover,
+.thanks__name:focus-visible {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+}
+.thanks__affil {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+.thanks__note {
+  margin-top: 1.6rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.thanks__note-link {
+  color: var(--accent-magenta);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 220ms var(--ease-out);
+}
+.thanks__note-link:hover,
+.thanks__note-link:focus-visible { opacity: 0.7; }
+
+/* Acknowledgements initial states (animated in by GSAP) */
+html.js .thanks .kicker,
+html.js .thanks .section-title,
+html.js .thanks .section-lede,
+html.js .thanks__group {
+  opacity: 0;
+  transform: translateY(28px);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .thanks .kicker,
+  html.js .thanks .section-title,
+  html.js .thanks .section-lede,
+  html.js .thanks__group {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

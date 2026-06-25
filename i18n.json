@@ -2,7 +2,7 @@
   "en": {
     "meta": {
       "title": "BIO-LUX // 6U CubeSat Demonstrator Mission",
-      "description": "BIO-LUX is a 6U CubeSat demonstrator mission designed by the MISE programme at Universidad Carlos III de Madrid. Four payloads, one bus, three years in orbit."
+      "description": "BIO-LUX is a 6U CubeSat demonstrator mission designed by the MISE programme at Universidad Carlos III de Madrid. Three payloads, one bus, three years in orbit."
     },
     "common": {
       "home": "Home",
@@ -40,11 +40,11 @@
       "kicker": "01 / THE PROBLEM",
       "title": "Smallsats are the new platform. Most of them are still single-purpose.",
       "p1": "Earth observation, biology, photonics and IoT each demand a dedicated mission, a dedicated launch and a dedicated team. Cost compounds. Schedules slip. Demonstrators that could fly together end up flying alone — if they fly at all.",
-      "p2": "BIO-LUX is built on a single premise: a 6U CubeSat can carry four independent demonstrators and return useful science from each one before deorbiting."
+      "p2": "BIO-LUX is built on a single premise: a 6U CubeSat can carry three independent demonstrators and return useful science from each one before deorbiting."
     },
     "solution": {
       "kicker": "02 / THE SOLUTION",
-      "title": "One bus. Four demonstrators. One orbit.",
+      "title": "One bus. Three demonstrators. One orbit.",
       "intro": "BIO-LUX consolidates three independent payloads inside a 6-unit CubeSat bus operating in a 500–700 km Sun-Synchronous Orbit, with envelope for up to five in compact form factors. The platform is designed around modularity, electric propulsion and an aggressive mass budget.",
       "pl1_label": "PAYLOAD A",
       "pl1_name": "Light Pollution EO",
@@ -495,12 +495,21 @@
       "lede": "Complete technical report covering all seven subsystems, mission analysis, design decisions and budget allocations.",
       "cta_label": "request the report",
       "format": "PDF · 26 MB"
+    },
+    "thanks": {
+      "kicker": "09 / ACKNOWLEDGEMENTS",
+      "title": "The experts behind the science.",
+      "lede": "BIO-LUX would not be the same without the researchers and institutions who advised our payload teams. We thank them for their generosity, their time and their science.",
+      "group_bio": "Biological payload",
+      "group_light": "Light pollution payload",
+      "group_vem": "VEM coating",
+      "guaix_note": "Light-pollution work developed in collaboration with GUAIX — UCM Group of Extragalactic Astrophysics and Astronomical Instrumentation."
     }
   },
   "es": {
     "meta": {
       "title": "BIO-LUX // Misión Demostradora CubeSat 6U",
-      "description": "BIO-LUX es una misión demostradora basada en un CubeSat 6U diseñada en el programa MISE de la Universidad Carlos III de Madrid. Cuatro cargas útiles, una plataforma, tres años en órbita."
+      "description": "BIO-LUX es una misión demostradora basada en un CubeSat 6U diseñada en el programa MISE de la Universidad Carlos III de Madrid. Tres cargas útiles, una plataforma, tres años en órbita."
     },
     "common": {
       "home": "Inicio",
@@ -538,11 +547,11 @@
       "kicker": "01 / EL PROBLEMA",
       "title": "Los smallsats son la nueva plataforma. La mayoría siguen siendo de un único propósito.",
       "p1": "La observación de la Tierra, la biología, la fotónica y el IoT exigen, cada una, una misión propia, un lanzamiento propio y un equipo propio. El coste se acumula. Los plazos se retrasan. Demostradores que podrían volar juntos acaban volando solos — si llegan a volar.",
-      "p2": "BIO-LUX parte de una premisa simple: un CubeSat 6U puede llevar cuatro demostradores independientes y devolver ciencia útil de cada uno antes de su desorbitado."
+      "p2": "BIO-LUX parte de una premisa simple: un CubeSat 6U puede llevar tres demostradores independientes y devolver ciencia útil de cada uno antes de su desorbitado."
     },
     "solution": {
       "kicker": "02 / LA SOLUCIÓN",
-      "title": "Una plataforma. Cuatro demostradores. Una órbita.",
+      "title": "Una plataforma. Tres demostradores. Una órbita.",
       "intro": "BIO-LUX integra tres cargas útiles independientes dentro de un bus CubeSat de 6 unidades que opera en órbita heliosíncrona entre 500 y 700 km, con envolvente para hasta cinco en formatos compactos. La plataforma se diseña en torno a la modularidad, la propulsión eléctrica y un presupuesto de masa agresivo.",
       "pl1_label": "CARGA A",
       "pl1_name": "EO Contaminación Lumínica",
@@ -996,6 +1005,15 @@
       "lede": "Informe técnico completo que cubre los siete subsistemas, el análisis de misión, las decisiones de diseño y la asignación de presupuestos.",
       "cta_label": "Solicitar el informe",
       "format": "PDF · 26 MB"
+    },
+    "thanks": {
+      "kicker": "09 / AGRADECIMIENTOS",
+      "title": "Los expertos detrás de la ciencia.",
+      "lede": "BIO-LUX no sería lo mismo sin los investigadores e instituciones que asesoraron a nuestros equipos de carga útil. Les agradecemos su generosidad, su tiempo y su ciencia.",
+      "group_bio": "Carga útil biológica",
+      "group_light": "Carga útil de contaminación lumínica",
+      "group_vem": "Recubrimiento VEM",
+      "guaix_note": "Trabajo de contaminación lumínica desarrollado en colaboración con GUAIX — Grupo UCM de Astrofísica Extragaláctica e Instrumentación Astronómica."
     }
   }
 }
